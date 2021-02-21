@@ -31,10 +31,14 @@ class SplashViewController: UIViewController {
     
     private func fetch() {
         
-        FetchUserRequester.shared.fetch(completion: { result in
-            
+        FetchUserRequester.shared.fetch(completion: { _ in
+            if let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId), myUserData.profileType != .none {
+                let tabbar = self.instantiate(storyboard: "Main", identifier: "TabbarViewController") as! TabbarViewController
+                self.stack(viewController: tabbar, animationType: .none)
+            } else {
+                self.showLoginView()
+            }
         })
-        self.showLoginView()
     }
     
     private func showLoginView() {
@@ -59,6 +63,44 @@ class SplashViewController: UIViewController {
     @IBAction func onTapLogin(_ sender: Any) {
         
         self.view.endEditing(true)
+        
+        let email = self.emailTextField.text ?? ""
+        let password = self.passwordTextField.text ?? ""
+        
+        if email.count == 0 {
+            Dialog.show(style: .error, title: "エラー", message: "メールアドレスの入力がありません", actions: [DialogAction(title: "OK", action: nil)])
+            return
+        }
+        if password.count == 0 {
+            Dialog.show(style: .error, title: "エラー", message: "パスワードの入力がありません", actions: [DialogAction(title: "OK", action: nil)])
+            return
+        }
+        
+        Loading.start()
+        
+        LoginRequester.login(email: email, password: password, completion: { result, userId in
+            FetchUserRequester.shared.fetch(completion: { _ in
+                Loading.stop()
+                
+                if result, let userId = userId {
+                    if let myUserData = FetchUserRequester.shared.query(userId: userId) {
+                        let saveData = SaveData.shared
+                        saveData.userId = userId
+                        saveData.save()
+                        
+                        if myUserData.profileType != .none {
+                            let tabbar = self.instantiate(storyboard: "Main", identifier: "TabbarViewController") as! TabbarViewController
+                            self.stack(viewController: tabbar, animationType: .none)
+                        } else {
+                            let profile = self.instantiate(storyboard: "MyPage", identifier: "ProfileViewController") as! ProfileViewController
+                            self.stack(viewController: profile, animationType: .horizontal)
+                        }
+                        return
+                    }
+                }
+                Dialog.show(style: .error, title: "エラー", message: "ログインに失敗しました", actions: [DialogAction(title: "OK", action: nil)])
+            })
+        })
     }
     
     @IBAction func onTapRegister(_ sender: Any) {

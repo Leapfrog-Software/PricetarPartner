@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LoginUserRequester {
+class LoginRequester {
         
     class func login(email: String, password: String, completion: @escaping ((Bool, String?) -> ())) {
         

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NwX-R6-5qg" customClass="Dialog" customModule="PricetarPartner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ew-7h-Frs">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KdG-Vz-XXt">
+                    <rect key="frame" x="32" y="289.5" width="350" height="317.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialog_success" translatesAutoresizingMaskIntoConstraints="NO" id="vrw-P0-o7t">
+                            <rect key="frame" x="135" y="32" width="80" height="80"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="80" id="YZw-Fa-S8C"/>
+                                <constraint firstAttribute="width" constant="80" id="heA-fr-X5j"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="タイトル" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSe-FR-XOu">
+                            <rect key="frame" x="32" y="144" width="286" height="26.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メッセージ" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7s-v9-QSW">
+                            <rect key="frame" x="32" y="186.5" width="286" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="206-6z-str">
+                            <rect key="frame" x="32" y="235.5" width="286" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" placeholder="YES" id="1JO-dZ-Xg5"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="206-6z-str" firstAttribute="leading" secondItem="KdG-Vz-XXt" secondAttribute="leading" constant="32" id="6d6-lc-gHi"/>
+                        <constraint firstAttribute="trailing" secondItem="Q7s-v9-QSW" secondAttribute="trailing" constant="32" id="77c-yv-Iwy"/>
+                        <constraint firstItem="Q7s-v9-QSW" firstAttribute="top" secondItem="iSe-FR-XOu" secondAttribute="bottom" constant="16" id="87Y-mt-O7A"/>
+                        <constraint firstItem="Q7s-v9-QSW" firstAttribute="leading" secondItem="KdG-Vz-XXt" secondAttribute="leading" constant="32" id="Oy0-Ld-WpO"/>
+                        <constraint firstItem="vrw-P0-o7t" firstAttribute="top" secondItem="KdG-Vz-XXt" secondAttribute="top" constant="32" id="Ra9-Gi-nAs"/>
+                        <constraint firstItem="206-6z-str" firstAttribute="top" secondItem="Q7s-v9-QSW" secondAttribute="bottom" constant="32" id="Rwj-Uh-KHy"/>
+                        <constraint firstAttribute="trailing" secondItem="iSe-FR-XOu" secondAttribute="trailing" constant="32" id="TdV-J4-ldx"/>
+                        <constraint firstItem="vrw-P0-o7t" firstAttribute="centerX" secondItem="KdG-Vz-XXt" secondAttribute="centerX" id="fMN-O9-vnL"/>
+                        <constraint firstItem="iSe-FR-XOu" firstAttribute="top" secondItem="vrw-P0-o7t" secondAttribute="bottom" constant="32" id="fnl-Hf-TNR"/>
+                        <constraint firstAttribute="trailing" secondItem="206-6z-str" secondAttribute="trailing" constant="32" id="jXQ-m6-fCK"/>
+                        <constraint firstItem="iSe-FR-XOu" firstAttribute="leading" secondItem="KdG-Vz-XXt" secondAttribute="leading" constant="32" id="mlI-4z-Wrz"/>
+                        <constraint firstAttribute="bottom" secondItem="206-6z-str" secondAttribute="bottom" constant="32" id="q1Y-9p-aOX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="q4u-fi-geU"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KdG-Vz-XXt" firstAttribute="centerY" secondItem="NwX-R6-5qg" secondAttribute="centerY" id="0MI-PC-6iE"/>
+                <constraint firstAttribute="bottom" secondItem="3ew-7h-Frs" secondAttribute="bottom" id="EQU-Xp-eVS"/>
+                <constraint firstItem="3ew-7h-Frs" firstAttribute="leading" secondItem="NwX-R6-5qg" secondAttribute="leading" id="Jlw-XA-yhG"/>
+                <constraint firstAttribute="trailing" secondItem="3ew-7h-Frs" secondAttribute="trailing" id="qfO-le-RlR"/>
+                <constraint firstItem="3ew-7h-Frs" firstAttribute="top" secondItem="NwX-R6-5qg" secondAttribute="top" id="t7p-S2-mQw"/>
+                <constraint firstItem="KdG-Vz-XXt" firstAttribute="leading" secondItem="q4u-fi-geU" secondAttribute="leading" constant="32" id="uCt-MZ-wei"/>
+                <constraint firstItem="q4u-fi-geU" firstAttribute="trailing" secondItem="KdG-Vz-XXt" secondAttribute="trailing" constant="32" id="xcg-cc-04f"/>
+            </constraints>
+            <connections>
+                <outlet property="buttonsStackView" destination="206-6z-str" id="gYp-lN-2bQ"/>
+                <outlet property="iconImageView" destination="vrw-P0-o7t" id="Wja-G4-Pdg"/>
+                <outlet property="messageLabel" destination="Q7s-v9-QSW" id="KvC-Sa-Os8"/>
+                <outlet property="titleLabel" destination="iSe-FR-XOu" id="uST-5Y-4SW"/>
+            </connections>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dialog_success" width="80" height="80"/>
+    </resources>
+</document>
