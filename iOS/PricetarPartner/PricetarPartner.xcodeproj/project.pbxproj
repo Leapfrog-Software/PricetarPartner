@@ -25,6 +25,10 @@
 		1750A82D25E2495500E5B346 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A82C25E2495500E5B346 /* EntryViewController.swift */; };
 		1750A83025E2495D00E5B346 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A82F25E2495D00E5B346 /* SearchViewController.swift */; };
 		1750A83325E2496700E5B346 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83225E2496700E5B346 /* MessageViewController.swift */; };
+		1750A83625E24C9D00E5B346 /* ProfileClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83525E24C9D00E5B346 /* ProfileClientViewController.swift */; };
+		1750A83925E24CA700E5B346 /* ProfilePartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83825E24CA700E5B346 /* ProfilePartnerViewController.swift */; };
+		1750A83C25E24D6C00E5B346 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */; };
+		1750A84625E2562B00E5B346 /* ProfileAreaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */; };
 		17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CC7BEB25E21C0300231F18 /* AppDelegate.swift */; };
 		17CC7BF525E21C0400231F18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CC7BF425E21C0400231F18 /* Assets.xcassets */; };
 		17CC7BF825E21C0400231F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CC7BF625E21C0400231F18 /* LaunchScreen.storyboard */; };
@@ -65,6 +69,10 @@
 		1750A82C25E2495500E5B346 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		1750A82F25E2495D00E5B346 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		1750A83225E2496700E5B346 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		1750A83525E24C9D00E5B346 /* ProfileClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileClientViewController.swift; sourceTree = "<group>"; };
+		1750A83825E24CA700E5B346 /* ProfilePartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePartnerViewController.swift; sourceTree = "<group>"; };
+		1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAreaSelectViewController.swift; sourceTree = "<group>"; };
 		17CC7BE825E21C0300231F18 /* PricetarPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PricetarPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CC7BEB25E21C0300231F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CC7BF425E21C0400231F18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				1750A82025E2484500E5B346 /* ProfileViewController.swift */,
+				1750A83525E24C9D00E5B346 /* ProfileClientViewController.swift */,
+				1750A83825E24CA700E5B346 /* ProfilePartnerViewController.swift */,
+				1750A84425E2561700E5B346 /* AreaSelect */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -174,6 +185,14 @@
 				1750A83225E2496700E5B346 /* MessageViewController.swift */,
 			);
 			path = Message;
+			sourceTree = "<group>";
+		};
+		1750A84425E2561700E5B346 /* AreaSelect */ = {
+			isa = PBXGroup;
+			children = (
+				1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */,
+			);
+			path = AreaSelect;
 			sourceTree = "<group>";
 		};
 		17CC7BDF25E21C0300231F18 = {
@@ -250,6 +269,7 @@
 				17CC7C2A25E239A500231F18 /* DateFormatter+Extension.swift */,
 				17CC7C3B25E23CAA00231F18 /* UIViewController+Extension.swift */,
 				17CC7C3E25E23CC800231F18 /* CALayer+Extension.swift */,
+				1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -393,6 +413,7 @@
 				1750A82125E2484500E5B346 /* ProfileViewController.swift in Sources */,
 				17CC7C2225E236E500231F18 /* String+Extension.swift in Sources */,
 				17CC7C2825E2373300231F18 /* UserData.swift in Sources */,
+				1750A83625E24C9D00E5B346 /* ProfileClientViewController.swift in Sources */,
 				1750A80825E2437A00E5B346 /* TabbarViewController.swift in Sources */,
 				17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */,
 				17CC7C1F25E236B900231F18 /* RegisterUserRequester.swift in Sources */,
@@ -400,14 +421,17 @@
 				17CC7C1325E2366000231F18 /* HttpRequester.swift in Sources */,
 				1750A83025E2495D00E5B346 /* SearchViewController.swift in Sources */,
 				17CC7C0925E21D1900231F18 /* SplashViewController.swift in Sources */,
+				1750A83C25E24D6C00E5B346 /* UIColor+Extension.swift in Sources */,
 				17CC7C3825E23C0000231F18 /* PaddingTextField.swift in Sources */,
 				17CC7C3F25E23CC800231F18 /* CALayer+Extension.swift in Sources */,
 				17CC7C3425E23A6700231F18 /* RegisterUserViewController.swift in Sources */,
 				1750A81C25E2483500E5B346 /* MyPageViewController.swift in Sources */,
 				1750A7FD25E2426600E5B346 /* DialogButton.swift in Sources */,
 				17CC7C2B25E239A500231F18 /* DateFormatter+Extension.swift in Sources */,
+				1750A83925E24CA700E5B346 /* ProfilePartnerViewController.swift in Sources */,
 				17CC7C2E25E239B900231F18 /* FetchUserRequester.swift in Sources */,
 				17CC7C1825E2366B00231F18 /* ApiRequester.swift in Sources */,
+				1750A84625E2562B00E5B346 /* ProfileAreaSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

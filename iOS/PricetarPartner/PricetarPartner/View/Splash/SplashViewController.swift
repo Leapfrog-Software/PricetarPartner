@@ -93,6 +93,7 @@ class SplashViewController: UIViewController {
                             self.stack(viewController: tabbar, animationType: .none)
                         } else {
                             let profile = self.instantiate(storyboard: "MyPage", identifier: "ProfileViewController") as! ProfileViewController
+                            profile.set(needBack: true)
                             self.stack(viewController: profile, animationType: .horizontal)
                         }
                         return
