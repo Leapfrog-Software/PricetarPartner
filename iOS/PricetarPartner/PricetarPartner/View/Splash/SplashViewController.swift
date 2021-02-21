@@ -30,6 +30,10 @@ class SplashViewController: UIViewController {
     }
     
     private func fetch() {
+        
+        FetchUserRequester.shared.fetch(completion: { result in
+            
+        })
         self.showLoginView()
     }
     
@@ -60,5 +64,8 @@ class SplashViewController: UIViewController {
     @IBAction func onTapRegister(_ sender: Any) {
         
         self.view.endEditing(true)
+        
+        let registerUser = self.instantiate(storyboard: "Main", identifier: "RegisterUserViewController") as! RegisterUserViewController
+        self.stack(viewController: registerUser, animationType: .horizontal)
     }
 }
