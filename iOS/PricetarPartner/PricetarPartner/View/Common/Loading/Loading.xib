@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="wY9-x5-A7a" customClass="Loading" customModule="PricetarPartner" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G31-in-yhB">
+                    <rect key="frame" x="147" y="388" width="120" height="120"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="RLq-cl-KZQ">
+                            <rect key="frame" x="35" y="35" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="iDM-IO-KHT"/>
+                                <constraint firstAttribute="height" constant="50" id="lkj-UP-lnz"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="4DI-Ip-dRd"/>
+                        <constraint firstItem="RLq-cl-KZQ" firstAttribute="centerY" secondItem="G31-in-yhB" secondAttribute="centerY" id="OGa-lT-rGs"/>
+                        <constraint firstAttribute="height" constant="120" id="bWU-qi-8lg"/>
+                        <constraint firstItem="RLq-cl-KZQ" firstAttribute="centerX" secondItem="G31-in-yhB" secondAttribute="centerX" id="mAV-YU-WpC"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Sv4-sb-Rqy"/>
+            <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="G31-in-yhB" firstAttribute="centerX" secondItem="wY9-x5-A7a" secondAttribute="centerX" id="HaA-C6-I3d"/>
+                <constraint firstItem="G31-in-yhB" firstAttribute="centerY" secondItem="wY9-x5-A7a" secondAttribute="centerY" id="oim-aK-yOG"/>
+            </constraints>
+            <connections>
+                <outlet property="loadingImageView" destination="RLq-cl-KZQ" id="EPA-KC-EEG"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="146"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="loading" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
