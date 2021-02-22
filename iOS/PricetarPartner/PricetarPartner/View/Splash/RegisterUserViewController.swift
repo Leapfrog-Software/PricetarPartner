@@ -50,7 +50,7 @@ class RegisterUserViewController: UIViewController {
                 saveData.save()
                 
                 let profile = self.instantiate(storyboard: "MyPage", identifier: "ProfileViewController") as! ProfileViewController
-                profile.set(needBack: false)
+                profile.set(transitionSource: .register)
                 self.stack(viewController: profile, animationType: .horizontal)
             } else {
                 Dialog.show(style: .error, title: "エラー", message: "通信に失敗しました", actions: [DialogAction(title: "OK", action: nil)])

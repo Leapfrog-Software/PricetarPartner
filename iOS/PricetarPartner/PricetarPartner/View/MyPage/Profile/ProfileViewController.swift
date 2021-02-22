@@ -9,6 +9,12 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    enum TransitionSource {
+        case splash
+        case register
+        case myPage
+    }
+    
     @IBOutlet private weak var backButton: UIButton!
     @IBOutlet private weak var clientButton: UIButton!
     @IBOutlet private weak var partnerButton: UIButton!
@@ -16,10 +22,33 @@ class ProfileViewController: UIViewController {
     
     private var profileClientViewController: ProfileClientViewController!
     private var profilePartnerViewController: ProfilePartnerViewController!
-    private var needBack = false
+    private var transitionSource: TransitionSource!
     
-    func set(needBack: Bool) {
-        self.needBack = needBack
+    func set(transitionSource: TransitionSource) {
+        self.transitionSource = transitionSource
+    }
+    
+    func didUpdate() {
+        
+        // スプラッシュから遷移(ログイン後プロフィール未設定)
+        if self.transitionSource == .splash {
+            if let splash = self.parent as? SplashViewController {
+                splash.fetch()
+            }
+        }
+        // 新規登録画面から遷移(新規登録済みプロフィール未設定)
+        else if self.transitionSource == .register {
+            if let splash = self.parent?.parent as? SplashViewController {
+                splash.fetch()
+            }
+        }
+        // マイページから遷移
+        else {
+            let action = DialogAction(title: "OK", action: { [weak self] in
+                self?.parent?.pop(animationType: .horizontal)
+            })
+            Dialog.show(style: .success, title: "確認", message: "更新しました", actions: [action])
+        }
     }
     
     override func viewDidLoad() {
@@ -39,7 +68,16 @@ class ProfileViewController: UIViewController {
             self.changeSegment(index: 0)
         }
         
-        self.backButton.isHidden = !self.needBack
+        switch self.transitionSource {
+        case .splash:
+            self.backButton.isHidden = false
+        case .register:
+            self.backButton.isHidden = true
+        case .myPage:
+            self.backButton.isHidden = false
+        default:
+            break
+        }
     }
     
     private func addViewController(viewController: UIViewController) {

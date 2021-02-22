@@ -30,6 +30,15 @@
 		1750A83C25E24D6C00E5B346 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */; };
 		1750A84625E2562B00E5B346 /* ProfileAreaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */; };
 		1754840125E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754840025E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift */; };
+		1754840725E339C100FCEB04 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754840625E339C100FCEB04 /* PickerViewController.swift */; };
+		1754840B25E339CD00FCEB04 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754840A25E339CD00FCEB04 /* PickerTableViewCell.swift */; };
+		1754840E25E339E900FCEB04 /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1754840D25E339E900FCEB04 /* Common.storyboard */; };
+		1754841225E33C6400FCEB04 /* ProfileGenreSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841125E33C6400FCEB04 /* ProfileGenreSelectViewController.swift */; };
+		1754841625E33C7400FCEB04 /* ProfileGenreSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841525E33C7400FCEB04 /* ProfileGenreSelectTableViewCell.swift */; };
+		1754841925E342A600FCEB04 /* MultiPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841825E342A600FCEB04 /* MultiPickerViewController.swift */; };
+		1754841D25E343E700FCEB04 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841C25E343E700FCEB04 /* ImagePickerManager.swift */; };
+		1754842025E3443D00FCEB04 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841F25E3443D00FCEB04 /* UIImage+Extension.swift */; };
+		1754842325E3466D00FCEB04 /* UpdateClientProfileRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754842225E3466D00FCEB04 /* UpdateClientProfileRequester.swift */; };
 		17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CC7BEB25E21C0300231F18 /* AppDelegate.swift */; };
 		17CC7BF525E21C0400231F18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CC7BF425E21C0400231F18 /* Assets.xcassets */; };
 		17CC7BF825E21C0400231F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CC7BF625E21C0400231F18 /* LaunchScreen.storyboard */; };
@@ -75,6 +84,15 @@
 		1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAreaSelectViewController.swift; sourceTree = "<group>"; };
 		1754840025E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAreaSelectTableViewCell.swift; sourceTree = "<group>"; };
+		1754840625E339C100FCEB04 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		1754840A25E339CD00FCEB04 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
+		1754840D25E339E900FCEB04 /* Common.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
+		1754841125E33C6400FCEB04 /* ProfileGenreSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGenreSelectViewController.swift; sourceTree = "<group>"; };
+		1754841525E33C7400FCEB04 /* ProfileGenreSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileGenreSelectTableViewCell.swift; sourceTree = "<group>"; };
+		1754841825E342A600FCEB04 /* MultiPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiPickerViewController.swift; sourceTree = "<group>"; };
+		1754841C25E343E700FCEB04 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
+		1754841F25E3443D00FCEB04 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		1754842225E3466D00FCEB04 /* UpdateClientProfileRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClientProfileRequester.swift; sourceTree = "<group>"; };
 		17CC7BE825E21C0300231F18 /* PricetarPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PricetarPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CC7BEB25E21C0300231F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CC7BF425E21C0400231F18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -153,6 +171,7 @@
 				1750A83525E24C9D00E5B346 /* ProfileClientViewController.swift */,
 				1750A83825E24CA700E5B346 /* ProfilePartnerViewController.swift */,
 				1750A84425E2561700E5B346 /* AreaSelect */,
+				1754841025E33C4A00FCEB04 /* GenreSelect */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -196,6 +215,25 @@
 				1754840025E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift */,
 			);
 			path = AreaSelect;
+			sourceTree = "<group>";
+		};
+		1754840525E339B100FCEB04 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				1754840625E339C100FCEB04 /* PickerViewController.swift */,
+				1754841825E342A600FCEB04 /* MultiPickerViewController.swift */,
+				1754840A25E339CD00FCEB04 /* PickerTableViewCell.swift */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		1754841025E33C4A00FCEB04 /* GenreSelect */ = {
+			isa = PBXGroup;
+			children = (
+				1754841125E33C6400FCEB04 /* ProfileGenreSelectViewController.swift */,
+				1754841525E33C7400FCEB04 /* ProfileGenreSelectTableViewCell.swift */,
+			);
+			path = GenreSelect;
 			sourceTree = "<group>";
 		};
 		17CC7BDF25E21C0300231F18 = {
@@ -250,6 +288,7 @@
 			children = (
 				17CC7C1A25E2369000231F18 /* Constants.swift */,
 				17CC7C3025E239DA00231F18 /* SaveData.swift */,
+				1754841C25E343E700FCEB04 /* ImagePickerManager.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -273,6 +312,7 @@
 				17CC7C3B25E23CAA00231F18 /* UIViewController+Extension.swift */,
 				17CC7C3E25E23CC800231F18 /* CALayer+Extension.swift */,
 				1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */,
+				1754841F25E3443D00FCEB04 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,6 +335,7 @@
 				1750A81125E244CD00E5B346 /* Search.storyboard */,
 				1750A81425E244D500E5B346 /* Message.storyboard */,
 				1750A81725E244DE00E5B346 /* MyPage.storyboard */,
+				1754840D25E339E900FCEB04 /* Common.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -313,6 +354,7 @@
 				17CC7C1E25E236B900231F18 /* RegisterUserRequester.swift */,
 				17CC7C2425E2371100231F18 /* LoginRequester.swift */,
 				17CC7C2D25E239B900231F18 /* FetchUserRequester.swift */,
+				1754842225E3466D00FCEB04 /* UpdateClientProfileRequester.swift */,
 			);
 			path = Requester;
 			sourceTree = "<group>";
@@ -322,6 +364,7 @@
 			children = (
 				1750A7F125E2420400E5B346 /* Loading */,
 				1750A7F025E241FD00E5B346 /* Dialog */,
+				1754840525E339B100FCEB04 /* Picker */,
 				17CC7C3725E23C0000231F18 /* PaddingTextField.swift */,
 			);
 			path = Common;
@@ -393,6 +436,7 @@
 				1750A81825E244DE00E5B346 /* MyPage.storyboard in Resources */,
 				1750A80025E2426E00E5B346 /* Dialog.xib in Resources */,
 				1750A7F725E2421900E5B346 /* Loading.xib in Resources */,
+				1754840E25E339E900FCEB04 /* Common.storyboard in Resources */,
 				17CC7BF525E21C0400231F18 /* Assets.xcassets in Resources */,
 				1750A80325E2427400E5B346 /* DialogButton.xib in Resources */,
 			);
@@ -405,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1754841D25E343E700FCEB04 /* ImagePickerManager.swift in Sources */,
 				17CC7C2525E2371100231F18 /* LoginRequester.swift in Sources */,
 				1750A7F325E2421100E5B346 /* Loading.swift in Sources */,
 				17CC7C1B25E2369000231F18 /* Constants.swift in Sources */,
@@ -417,12 +462,16 @@
 				17CC7C2225E236E500231F18 /* String+Extension.swift in Sources */,
 				17CC7C2825E2373300231F18 /* UserData.swift in Sources */,
 				1750A83625E24C9D00E5B346 /* ProfileClientViewController.swift in Sources */,
+				1754842325E3466D00FCEB04 /* UpdateClientProfileRequester.swift in Sources */,
 				1750A80825E2437A00E5B346 /* TabbarViewController.swift in Sources */,
+				1754840B25E339CD00FCEB04 /* PickerTableViewCell.swift in Sources */,
 				17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */,
 				17CC7C1F25E236B900231F18 /* RegisterUserRequester.swift in Sources */,
 				1750A83325E2496700E5B346 /* MessageViewController.swift in Sources */,
+				1754841625E33C7400FCEB04 /* ProfileGenreSelectTableViewCell.swift in Sources */,
 				17CC7C1325E2366000231F18 /* HttpRequester.swift in Sources */,
 				1750A83025E2495D00E5B346 /* SearchViewController.swift in Sources */,
+				1754840725E339C100FCEB04 /* PickerViewController.swift in Sources */,
 				17CC7C0925E21D1900231F18 /* SplashViewController.swift in Sources */,
 				1750A83C25E24D6C00E5B346 /* UIColor+Extension.swift in Sources */,
 				17CC7C3825E23C0000231F18 /* PaddingTextField.swift in Sources */,
@@ -435,6 +484,9 @@
 				1750A83925E24CA700E5B346 /* ProfilePartnerViewController.swift in Sources */,
 				17CC7C2E25E239B900231F18 /* FetchUserRequester.swift in Sources */,
 				17CC7C1825E2366B00231F18 /* ApiRequester.swift in Sources */,
+				1754841225E33C6400FCEB04 /* ProfileGenreSelectViewController.swift in Sources */,
+				1754842025E3443D00FCEB04 /* UIImage+Extension.swift in Sources */,
+				1754841925E342A600FCEB04 /* MultiPickerViewController.swift in Sources */,
 				1750A84625E2562B00E5B346 /* ProfileAreaSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

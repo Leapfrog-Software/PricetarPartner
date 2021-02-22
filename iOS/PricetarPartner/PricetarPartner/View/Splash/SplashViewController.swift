@@ -29,7 +29,7 @@ class SplashViewController: UIViewController {
         })
     }
     
-    private func fetch() {
+    func fetch() {
         
         FetchUserRequester.shared.fetch(completion: { _ in
             if let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId), myUserData.profileType != .none {
@@ -93,7 +93,7 @@ class SplashViewController: UIViewController {
                             self.stack(viewController: tabbar, animationType: .none)
                         } else {
                             let profile = self.instantiate(storyboard: "MyPage", identifier: "ProfileViewController") as! ProfileViewController
-                            profile.set(needBack: true)
+                            profile.set(transitionSource: .splash)
                             self.stack(viewController: profile, animationType: .horizontal)
                         }
                         return
