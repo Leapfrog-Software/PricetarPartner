@@ -29,6 +29,7 @@
 		1750A83925E24CA700E5B346 /* ProfilePartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83825E24CA700E5B346 /* ProfilePartnerViewController.swift */; };
 		1750A83C25E24D6C00E5B346 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */; };
 		1750A84625E2562B00E5B346 /* ProfileAreaSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */; };
+		1754840125E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754840025E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift */; };
 		17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CC7BEB25E21C0300231F18 /* AppDelegate.swift */; };
 		17CC7BF525E21C0400231F18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17CC7BF425E21C0400231F18 /* Assets.xcassets */; };
 		17CC7BF825E21C0400231F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17CC7BF625E21C0400231F18 /* LaunchScreen.storyboard */; };
@@ -73,6 +74,7 @@
 		1750A83825E24CA700E5B346 /* ProfilePartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePartnerViewController.swift; sourceTree = "<group>"; };
 		1750A83B25E24D6C00E5B346 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAreaSelectViewController.swift; sourceTree = "<group>"; };
+		1754840025E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAreaSelectTableViewCell.swift; sourceTree = "<group>"; };
 		17CC7BE825E21C0300231F18 /* PricetarPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PricetarPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17CC7BEB25E21C0300231F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17CC7BF425E21C0400231F18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				1750A84525E2562B00E5B346 /* ProfileAreaSelectViewController.swift */,
+				1754840025E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift */,
 			);
 			path = AreaSelect;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				17CC7C3825E23C0000231F18 /* PaddingTextField.swift in Sources */,
 				17CC7C3F25E23CC800231F18 /* CALayer+Extension.swift in Sources */,
 				17CC7C3425E23A6700231F18 /* RegisterUserViewController.swift in Sources */,
+				1754840125E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift in Sources */,
 				1750A81C25E2483500E5B346 /* MyPageViewController.swift in Sources */,
 				1750A7FD25E2426600E5B346 /* DialogButton.swift in Sources */,
 				17CC7C2B25E239A500231F18 /* DateFormatter+Extension.swift in Sources */,

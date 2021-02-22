@@ -18,6 +18,8 @@ class ProfileClientViewController: UIViewController {
     @IBOutlet private weak var messageTextView: UITextView!
     @IBOutlet private weak var userImageView: UIImageView!
     
+    private var selectedArea: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +33,10 @@ class ProfileClientViewController: UIViewController {
         self.view.endEditing(true)
         
         let areaSelect = self.instantiate(storyboard: "MyPage", identifier: "ProfileAreaSelectViewController") as! ProfileAreaSelectViewController
-        
+        areaSelect.set(defaultArea: self.selectedArea, completion: { [weak self] area in
+            self?.selectedArea = area
+            self?.areaLabel.text = area
+        })
         self.stack(viewController: areaSelect, animationType: .none)
     }
     
