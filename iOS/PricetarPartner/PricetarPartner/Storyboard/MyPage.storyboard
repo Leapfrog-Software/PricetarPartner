@@ -16,8 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="AnO-mW-5k9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbZ-n7-Nh9">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.95858055350000004" green="0.73331314329999997" blue="0.36068996790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-8e-TBI">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="マイページ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uvq-x6-g1u">
+                                        <rect key="frame" x="156" y="18" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95858055350000004" green="0.73331314329999997" blue="0.36068996790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="uvq-x6-g1u" firstAttribute="centerY" secondItem="Qef-8e-TBI" secondAttribute="centerY" id="T3t-TR-5pq"/>
+                                    <constraint firstItem="uvq-x6-g1u" firstAttribute="centerX" secondItem="Qef-8e-TBI" secondAttribute="centerX" id="pU5-Jq-f2G"/>
+                                    <constraint firstAttribute="height" constant="60" id="r5A-Qv-XZK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="geS-1M-cnf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gbZ-n7-Nh9" firstAttribute="leading" secondItem="AnO-mW-5k9" secondAttribute="leading" id="T50-RA-63d"/>
+                            <constraint firstItem="Qef-8e-TBI" firstAttribute="leading" secondItem="AnO-mW-5k9" secondAttribute="leading" id="WFB-3M-QwG"/>
+                            <constraint firstItem="gbZ-n7-Nh9" firstAttribute="top" secondItem="AnO-mW-5k9" secondAttribute="top" id="aPi-GN-Ou8"/>
+                            <constraint firstItem="Qef-8e-TBI" firstAttribute="top" secondItem="geS-1M-cnf" secondAttribute="top" id="mQ6-XF-9rm"/>
+                            <constraint firstItem="geS-1M-cnf" firstAttribute="trailing" secondItem="Qef-8e-TBI" secondAttribute="trailing" id="qMK-Vg-ZUa"/>
+                            <constraint firstItem="geS-1M-cnf" firstAttribute="trailing" secondItem="gbZ-n7-Nh9" secondAttribute="trailing" id="qSO-8n-uFC"/>
+                            <constraint firstItem="Qef-8e-TBI" firstAttribute="top" secondItem="gbZ-n7-Nh9" secondAttribute="bottom" id="yit-eu-eRy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cpq-3h-NM6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

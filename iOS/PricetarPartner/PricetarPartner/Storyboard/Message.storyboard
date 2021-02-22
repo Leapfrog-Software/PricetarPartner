@@ -16,8 +16,40 @@
                     <view key="view" contentMode="scaleToFill" id="yLo-6q-uaE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b8Y-Yj-bHL">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <color key="backgroundColor" red="0.95858055350000004" green="0.73331314329999997" blue="0.36068996790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pob-Kn-MCQ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メッセージ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YG1-xl-odg">
+                                        <rect key="frame" x="156" y="18" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.95858055350000004" green="0.73331314329999997" blue="0.36068996790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="YG1-xl-odg" firstAttribute="centerX" secondItem="pob-Kn-MCQ" secondAttribute="centerX" id="TPl-Rj-oyC"/>
+                                    <constraint firstAttribute="height" constant="60" id="fB1-R3-LAC"/>
+                                    <constraint firstItem="YG1-xl-odg" firstAttribute="centerY" secondItem="pob-Kn-MCQ" secondAttribute="centerY" id="uDn-Af-iyy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4t5-l7-K37"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4t5-l7-K37" firstAttribute="trailing" secondItem="pob-Kn-MCQ" secondAttribute="trailing" id="3lO-Uh-bKV"/>
+                            <constraint firstItem="b8Y-Yj-bHL" firstAttribute="top" secondItem="yLo-6q-uaE" secondAttribute="top" id="3vm-YO-grd"/>
+                            <constraint firstItem="pob-Kn-MCQ" firstAttribute="top" secondItem="4t5-l7-K37" secondAttribute="top" id="5k7-Et-7YS"/>
+                            <constraint firstItem="b8Y-Yj-bHL" firstAttribute="leading" secondItem="yLo-6q-uaE" secondAttribute="leading" id="AXS-vY-7TI"/>
+                            <constraint firstItem="4t5-l7-K37" firstAttribute="trailing" secondItem="b8Y-Yj-bHL" secondAttribute="trailing" id="C8S-Lb-UMb"/>
+                            <constraint firstItem="pob-Kn-MCQ" firstAttribute="leading" secondItem="yLo-6q-uaE" secondAttribute="leading" id="Lpp-9C-OYY"/>
+                            <constraint firstItem="pob-Kn-MCQ" firstAttribute="top" secondItem="b8Y-Yj-bHL" secondAttribute="bottom" id="kXz-AO-5TA"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ker-VF-rNl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
