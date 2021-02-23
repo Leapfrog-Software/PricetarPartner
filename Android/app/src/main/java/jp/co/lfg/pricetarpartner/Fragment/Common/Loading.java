@@ -1,4 +1,4 @@
-package jp.co.lfg.pricetarpartner.Fragment.Splash.Common;
+package jp.co.lfg.pricetarpartner.Fragment.Common;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package jp.co.lfg.pricetarpartner.Fragment.Splash.Common.Picker;
+package jp.co.lfg.pricetarpartner.Fragment.Common.Picker;
 
 import android.content.Context;
 import android.view.LayoutInflater;

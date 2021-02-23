@@ -4,6 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <solid android:color="@color/dialogButtonCancel" />
+    <solid android:color="#C8C8C8" />
     <corners android:radius="4dp" />
 </shape>

@@ -4,6 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <solid android:color="@color/dialogButtonError" />
+    <solid android:color="#E64942" />
     <corners android:radius="4dp" />
 </shape>

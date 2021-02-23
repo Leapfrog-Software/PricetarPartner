@@ -5,10 +5,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import jp.co.lfg.pricetarpartner.Fragment.Splash.Common.Dialog;
-import jp.co.lfg.pricetarpartner.Fragment.Splash.Common.Loading;
+import jp.co.lfg.pricetarpartner.Fragment.Common.Dialog;
+import jp.co.lfg.pricetarpartner.Fragment.Common.Loading;
 import jp.co.lfg.pricetarpartner.Fragment.Splash.SplashFragment;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
+import jp.co.lfg.pricetarpartner.System.SaveData;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
         Loading.initialize(this);
         Dialog.initialize(this);
+        SaveData.getInstance().initialize(this);
         DeviceUtility.initialize(this);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
