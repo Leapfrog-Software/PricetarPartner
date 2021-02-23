@@ -5,6 +5,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import jp.co.lfg.pricetarpartner.Fragment.Splash.Common.Dialog;
+import jp.co.lfg.pricetarpartner.Fragment.Splash.Common.Loading;
 import jp.co.lfg.pricetarpartner.Fragment.Splash.SplashFragment;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
 
@@ -15,10 +17,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Loading.initialize(this);
+        Dialog.initialize(this);
         DeviceUtility.initialize(this);
 
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.rootContainer, new SplashFragment());
         transaction.commitAllowingStateLoss();
+    }
+
+    public int getSubContainerId() {
+        return R.id.subContainer;
     }
 }
