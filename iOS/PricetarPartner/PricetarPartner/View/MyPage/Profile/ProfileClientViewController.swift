@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileClientViewController: UIViewController {
+class ProfileClientViewController: KeyboardRespondableViewController {
 
     @IBOutlet private weak var nicknameTextField: UITextField!
     @IBOutlet private weak var areaLabel: UILabel!
@@ -17,6 +17,7 @@ class ProfileClientViewController: UIViewController {
     @IBOutlet private weak var optionLabel: UILabel!
     @IBOutlet private weak var messageTextView: UITextView!
     @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var scrollViewBottomConstraint: NSLayoutConstraint!
     
     private var selectedArea: String?
     private var selectedUseFrequency: String?
@@ -166,6 +167,16 @@ class ProfileClientViewController: UIViewController {
                     Dialog.show(style: .error, title: "エラー", message: "通信に失敗しました", actions: [DialogAction(title: "OK", action: nil)])
                 }
             })
+        })
+    }
+    
+    override func didChangeKeyboard(option: KeyboardAnimationOption) {
+        
+        
+        self.scrollViewBottomConstraint.constant = option.height
+        
+        UIView.animate(withDuration: option.duration, delay: 0, options: option.curve, animations: {
+            self.view.layoutIfNeeded()
         })
     }
 }
