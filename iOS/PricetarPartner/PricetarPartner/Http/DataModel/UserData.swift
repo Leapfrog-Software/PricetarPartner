@@ -21,15 +21,15 @@ struct UserData {
     let profileType: ProfileType
     let clientUseFrequency: String
     let clientCondition: String
-    let clientGenre: String
+    let clientGenres: [String]
     let clientMessage: String
     let partnerCareer: String
     let partnerStatus: String
-    let partnerNewPrice: Int
-    let partnerOldPrice: Int
-    let partnerDangerousPrice: Int
+    let partnerNewPrice: String
+    let partnerOldPrice: String
+    let partnerDangerousPrice: String
     let partnerDangerousMessage: String
-    let partnerInspectionPrice: Int
+    let partnerInspectionPrice: String
     let partnerInspectionMessage: String
     let partnerMessage: String
     let loginDatetime: Date
@@ -51,16 +51,16 @@ struct UserData {
         
         self.clientUseFrequency = (data["clientUseFrequency"] as? String)?.base64Decode() ?? ""
         self.clientCondition = (data["clientCondition"] as? String)?.base64Decode() ?? ""
-        self.clientGenre = (data["clientGenre"] as? String)?.base64Decode() ?? ""
+        self.clientGenres = (data["clientGenres"] as? String)?.components(separatedBy: ",").compactMap { $0.base64Decode() } ?? []
         self.clientMessage = (data["clientMessage"] as? String)?.base64Decode() ?? ""
         self.partnerCareer = (data["partnerCareer"] as? String)?.base64Decode() ?? ""
         self.partnerStatus = (data["partnerStatus"] as? String)?.base64Decode() ?? ""
         
-        self.partnerNewPrice = Int(data["partnerNewPrice"] as? String ?? "") ?? 0
-        self.partnerOldPrice = Int(data["partnerOldPrice"] as? String ?? "") ?? 0
-        self.partnerDangerousPrice = Int(data["partnerDangerousPrice"] as? String ?? "") ?? 0
+        self.partnerNewPrice = data["partnerNewPrice"] as? String ?? ""
+        self.partnerOldPrice = data["partnerOldPrice"] as? String ?? ""
+        self.partnerDangerousPrice = data["partnerDangerousPrice"] as? String ?? ""
         self.partnerDangerousMessage = (data["partnerDangerousMessage"] as? String)?.base64Decode() ?? ""
-        self.partnerInspectionPrice = Int(data["partnerInspectionPrice"] as? String ?? "") ?? 0
+        self.partnerInspectionPrice = data["partnerInspectionPrice"] as? String ?? ""
         self.partnerInspectionMessage = (data["partnerInspectionMessage"] as? String)?.base64Decode() ?? ""
         self.partnerMessage = (data["partnerMessage"] as? String)?.base64Decode() ?? ""
         
