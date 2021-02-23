@@ -70,6 +70,8 @@ public class RegisterUserFragment extends BaseFragment {
         RegisterUserRequester.register(email, password, new RegisterUserRequester.Callback() {
             @Override
             public void didReceiveData(boolean result, String userId) {
+                Loading.stop();
+
                 if (result) {
                     SaveData saveData = SaveData.getInstance();
                     saveData.userId = userId;
