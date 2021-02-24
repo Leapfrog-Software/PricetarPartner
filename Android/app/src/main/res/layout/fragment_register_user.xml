@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="#fff"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F4BB2E">
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/back"
+            android:scaleType="fitCenter"
+            android:background="#0000"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="新規登録"
+            android:textSize="20dp"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="メールアドレス"
+        android:textSize="15dp"
+        android:textColor="#363636"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="40dp"/>
+
+    <EditText
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="15dp"
+        android:textColor="#363636"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/shape_fdf6eb_corner20_borderc1bdb7"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="パスワード"
+        android:textSize="15dp"
+        android:textColor="#363636"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="40dp"/>
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textSize="15dp"
+        android:textColor="#363636"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:inputType="text"
+        android:background="@drawable/shape_fdf6eb_corner20_borderc1bdb7"/>
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="240dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_f4b848_corner20"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="34dp"
+        android:text="登録する"
+        android:textSize="18dp"
+        android:textColor="#fff"
+        android:textStyle="bold"/>
+
+</LinearLayout>
