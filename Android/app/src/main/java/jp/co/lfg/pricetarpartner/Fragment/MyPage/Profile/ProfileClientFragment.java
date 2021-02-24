@@ -6,14 +6,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.StringJoiner;
+
 import jp.co.lfg.pricetarpartner.Fragment.BaseFragment;
 import jp.co.lfg.pricetarpartner.Fragment.MyPage.Profile.AreaSelect.ProfileAreaSelectFragment;
+import jp.co.lfg.pricetarpartner.Fragment.MyPage.Profile.GenreSelect.ProfileGenreSelectFragment;
 import jp.co.lfg.pricetarpartner.R;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
 
 public class ProfileClientFragment extends BaseFragment {
 
     private String mSelectedArea = null;
+    private ArrayList<String> mSelectedGenres = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
@@ -67,6 +72,24 @@ public class ProfileClientFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 DeviceUtility.hideSoftKeyboard();
+
+                ProfileGenreSelectFragment fragment = new ProfileGenreSelectFragment();
+                fragment.set(mSelectedGenres, new ProfileGenreSelectFragment.Callback() {
+                    @Override
+                    public void didSelect(ArrayList<String> genres) {
+                        View view = getView();
+                        if (view != null) {
+                            StringJoiner genresJoiner = new StringJoiner(", ");
+                            for (String genre : genres) {
+                                genresJoiner.add(genre);
+                            }
+                            ((TextView)view.findViewById(R.id.genreTextView)).setText(genresJoiner.toString());
+
+                            mSelectedGenres = genres;
+                        }
+                    }
+                });
+                stackFragment(fragment, AnimationType.horizontal);
             }
         });
         view.findViewById(R.id.optionLayout).setOnClickListener(new View.OnClickListener() {

@@ -158,12 +158,14 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp">
                 <TextView
+                    android:id="@+id/genreTextView"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:text=""
                     android:textSize="15dp"
                     android:textColor="#363636"
+                    android:maxLines="1"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="20dp"/>
                 <ImageView
