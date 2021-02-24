@@ -14,6 +14,7 @@ class UpdateClientProfileRequester {
         var params = ["command": "updateClientProfile"]
         params["userId"] = SaveData.shared.userId
         params["nickname"] = nickname.base64Encode() ?? ""
+        params["area"] = area.base64Encode() ?? ""
         params["useFrequency"] = useFrequency.base64Encode() ?? ""
         params["condition"] = condition.base64Encode() ?? ""
         params["genres"] = genres.compactMap { $0.base64Encode() }.joined(separator: ",")
