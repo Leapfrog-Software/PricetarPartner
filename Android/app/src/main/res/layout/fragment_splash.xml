@@ -113,7 +113,7 @@
     <LinearLayout
         android:id="@+id/registerLayout"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:layout_gravity="bottom|center_horizontal"
         android:layout_marginBottom="20dp"
@@ -124,21 +124,24 @@
             android:text="新規登録は"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:textColor="#363636"/>
+            android:textColor="#363636"
+            android:layout_gravity="center_vertical"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="コチラ"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:textColor="#f4b848"/>
+            android:textColor="#f4b848"
+            android:layout_gravity="center_vertical"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="から"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:textColor="#363636"/>
+            android:textColor="#363636"
+            android:layout_gravity="center_vertical"/>
     </LinearLayout>
 
 </FrameLayout>
