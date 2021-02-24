@@ -23,6 +23,8 @@ class User {
 	public $partnerOldPrice;
 	public $partnerDangerousPrice;
 	public $partnerDangerousMessage;
+	public $partnerBigPrice;
+	public $partnerBigMessage;
 	public $partnerInspectionPrice;
 	public $partnerInspectionMessage;
 	public $partnerMessage;
@@ -40,7 +42,7 @@ class User {
 		}
 
 		$datas = explode("\n", $fileData);
-		if (count($datas) >= 22) {
+		if (count($datas) >= 24) {
 			$data = new User();
 			$data->id = $datas[0];
 			$data->email = $datas[1];
@@ -59,11 +61,13 @@ class User {
 			$data->partnerOldPrice = $datas[14];
 			$data->partnerDangerousPrice = $datas[15];
 			$data->partnerDangerousMessage = $datas[16];
-			$data->partnerInspectionPrice = $datas[17];
-			$data->partnerInspectionMessage = $datas[18];
-			$data->partnerMessage = $datas[19];
-			$data->loginDatetime = $datas[20];
-			$data->deviceToken = $datas[21];
+			$data->partnerBigPrice = $datas[17];
+			$data->partnerBigMessage = $datas[18];
+			$data->partnerInspectionPrice = $datas[19];
+			$data->partnerInspectionMessage = $datas[20];
+			$data->partnerMessage = $datas[21];
+			$data->loginDatetime = $datas[22];
+			$data->deviceToken = $datas[23];
 			return $data;
 		}
 		return null;
@@ -88,6 +92,8 @@ class User {
 				. $this->partnerOldPrice . "\n"
 				. $this->partnerDangerousPrice . "\n"
 				. $this->partnerDangerousMessage . "\n"
+				. $this->partnerBigPrice . "\n"
+				. $this->partnerBigMessage . "\n"
 				. $this->partnerInspectionPrice . "\n"
 				. $this->partnerInspectionMessage . "\n"
 				. $this->partnerMessage . "\n"
@@ -112,6 +118,8 @@ class User {
 					 "partnerOldPrice" => $this->partnerOldPrice,
 					 "partnerDangerousPrice" => $this->partnerDangerousPrice,
 					 "partnerDangerousMessage" => $this->partnerDangerousMessage,
+					 "partnerBigPrice" => $this->partnerBigPrice,
+					 "partnerBigMessage" => $this->partnerBigMessage,
 					 "partnerInspectionPrice" => $this->partnerInspectionPrice,
 					 "partnerInspectionMessage" => $this->partnerInspectionMessage,
 					 "partnerMessage" => $this->partnerMessage,
@@ -164,6 +172,8 @@ class User {
 		$user->partnerOldPrice = "";
 		$user->partnerDangerousPrice = "";
 		$user->partnerDangerousMessage = "";
+		$user->partnerBigPrice = "";
+		$user->partnerBigMessage = "";
 		$user->partnerInspectionPrice = "";
 		$user->partnerInspectionMessage = "";
 		$user->partnerMessage = "";
@@ -204,7 +214,7 @@ class User {
 		return $user->save();
 	}
 
-	static function updatePartnerProfile($userId, $nickname, $area, $career, $status, $newPrice, $oldPrice, $dangerousPrice, $dangeroudMessage, $inspectionPrice, $inspectionMessage, $message, $image) {
+	static function updatePartnerProfile($userId, $nickname, $area, $career, $status, $newPrice, $oldPrice, $dangerousPrice, $dangeroudMessage, $bigPrice, $bigMessage, $inspectionPrice, $inspectionMessage, $message, $image) {
 
 		$user = User::read($userId);
 		if (is_null($user)) {
@@ -219,6 +229,8 @@ class User {
 		$user->partnerOldPrice = $oldPrice;
 		$user->partnerDangerousPrice = $dangerousPrice;
 		$user->partnerDangerousMessage = $dangeroudMessage;
+		$user->partnerBigPrice = $bigPrice;
+		$user->partnerBigMessage = $bigMessage;
 		$user->partnerInspectionPrice = $inspectionPrice;
 		$user->partnerInspectionMessage = $inspectionMessage;
 		$user->partnerMessage = $message;

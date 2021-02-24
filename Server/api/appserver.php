@@ -92,10 +92,14 @@ function updatePartnerProfile() {
 	$oldPrice = getPostParam("oldPrice");
 	$dangerousPrice = getPostParam("dangerousPrice");
 	$dangerousMessage = getPostParam("dangerousMessage");
+	$bigPrice = getPostParam("bigPrice");
+	$bigMessage = getPostParam("bigMessage");
 	$inspectionPrice = getPostParam("inspectionPrice");
 	$inspectionMessage = getPostParam("inspectionMessage");
+	$message = getPostParam("message");
+	$image = getPostParam("image");
 
-	if (User::updatePartnerProfile($userId, $nickname, $area, $career, $status, $newPrice, $oldPrice, $dangerousPrice, $dangeroudMessage, $inspectionPrice, $inspectionMessage, $message, $image)) {
+	if (User::updatePartnerProfile($userId, $nickname, $area, $career, $status, $newPrice, $oldPrice, $dangerousPrice, $dangeroudMessage, $bigPrice, $bigMessage, $inspectionPrice, $inspectionMessage, $message, $image)) {
 		echo(json_encode(Array("result" => "0")));		
 	} else {
 		echo(json_encode(Array("result" => "1")));
