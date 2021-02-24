@@ -9,8 +9,8 @@ import Foundation
 
 class Constants {
     
-//    static let ServerRootUrl = "https://lfrogs.sakura.ne.jp/pricetarpartner/"
-    static let ServerRootUrl = "http://localhost/pricetarpartner/"
+    static let ServerRootUrl = "https://lfrogs.sakura.ne.jp/pricetarpartner/"
+//    static let ServerRootUrl = "http://localhost/pricetarpartner/"
     static let ServerApiUrl = Constants.ServerRootUrl + "api/appserver.php"
 
     static let StringEncoding = String.Encoding.utf8
