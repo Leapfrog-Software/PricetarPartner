@@ -4,3 +4,4 @@ Breakpoints_v2.xcbkptlist
 Server/data/
 Server/api/log/
 Server/api/vendor/
+Server/api/debug.txt
