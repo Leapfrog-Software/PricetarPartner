@@ -12,7 +12,8 @@ class ProfileClientViewController: KeyboardRespondableViewController {
     @IBOutlet private weak var nicknameTextField: UITextField!
     @IBOutlet private weak var areaLabel: UILabel!
     @IBOutlet private weak var useFreqencyLabel: UILabel!
-    @IBOutlet private weak var conditionLabel: UILabel!
+    @IBOutlet private weak var newConditionLabel: UILabel!
+    @IBOutlet private weak var oldConditionLabel: UILabel!
     @IBOutlet private weak var genreLabel: UILabel!
     @IBOutlet private weak var optionLabel: UILabel!
     @IBOutlet private weak var messageTextView: UITextView!
@@ -21,7 +22,8 @@ class ProfileClientViewController: KeyboardRespondableViewController {
     
     private var selectedArea: String?
     private var selectedUseFrequency: String?
-    private var selectedCondition: String?
+    private var selectedNewCondition: String?
+    private var selectedOldCondition: String?
     private var selectedGenres = [String]()
     private var selectedOptions = [String]()
     private let imagePicker = ImagePickerManager()
@@ -46,7 +48,7 @@ class ProfileClientViewController: KeyboardRespondableViewController {
         
         self.view.endEditing(true)
         
-        let dataArray = ["0 〜 10", "11 〜 30", "31 〜 100", "100 〜"]
+        let dataArray = ["0 〜 99個", "100 〜 299個", "300 〜 499個", "500 〜 999個", "1000個以上"]
 
         var defaultIndex: Int? = nil
         if let selectedUseFrequency = self.selectedUseFrequency {
@@ -60,20 +62,38 @@ class ProfileClientViewController: KeyboardRespondableViewController {
         }
     }
     
-    @IBAction func onTapCondition(_ sender: Any) {
+    @IBAction func onTapNewCondition(_ sender: Any) {
         
         self.view.endEditing(true)
         
-        let dataArray = ["新品", "中古"]
+        let dataArray = ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
 
         var defaultIndex: Int? = nil
-        if let selectedCondition = self.selectedCondition {
-            defaultIndex = dataArray.firstIndex(of: selectedCondition)
+        if let selectedNewCondition = self.selectedNewCondition {
+            defaultIndex = dataArray.firstIndex(of: selectedNewCondition)
         }
         if let parent = self.parent {
             PickerViewController.show(on: parent, title: "お取り扱い商品のコンディション", dataArray: dataArray, defaultIndex: defaultIndex, completion: { [weak self] index in
-                self?.selectedCondition = dataArray[index]
-                self?.conditionLabel.text = dataArray[index]
+                self?.selectedNewCondition = dataArray[index]
+                self?.newConditionLabel.text = dataArray[index]
+            })
+        }
+    }
+    
+    @IBAction func onTapOldCondition(_ sender: Any) {
+        
+        self.view.endEditing(true)
+        
+        let dataArray = ["0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"]
+
+        var defaultIndex: Int? = nil
+        if let selectedOldCondition = self.selectedOldCondition {
+            defaultIndex = dataArray.firstIndex(of: selectedOldCondition)
+        }
+        if let parent = self.parent {
+            PickerViewController.show(on: parent, title: "お取り扱い商品のコンディション", dataArray: dataArray, defaultIndex: defaultIndex, completion: { [weak self] index in
+                self?.selectedOldCondition = dataArray[index]
+                self?.oldConditionLabel.text = dataArray[index]
             })
         }
     }
@@ -146,7 +166,7 @@ class ProfileClientViewController: KeyboardRespondableViewController {
             return
         }
         
-        guard let condition = self.selectedCondition else {
+        guard let newCondition = self.selectedNewCondition, let oldCondition = self.selectedOldCondition else {
             Dialog.show(style: .error, title: "エラー", message: "お取り扱い商品のコンディションが選択されていません", actions: [DialogAction(title: "OK", action: nil)])
             return
         }
@@ -155,7 +175,7 @@ class ProfileClientViewController: KeyboardRespondableViewController {
         
         Loading.start()
         
-        UpdateClientProfileRequester.update(nickname: nickname, area: area, useFrequency: useFrequency, condition: condition, genres: self.selectedGenres, options: self.selectedOptions, message: message, image: self.selectedImage, completion: { result in
+        UpdateClientProfileRequester.update(nickname: nickname, area: area, useFrequency: useFrequency, newCondition: newCondition, oldCondition: oldCondition, genres: self.selectedGenres, options: self.selectedOptions, message: message, image: self.selectedImage, completion: { result in
             FetchUserRequester.shared.fetch(completion: { _ in
                 Loading.stop()
                 

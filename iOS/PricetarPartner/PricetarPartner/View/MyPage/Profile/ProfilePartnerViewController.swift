@@ -51,7 +51,7 @@ class ProfilePartnerViewController: KeyboardRespondableViewController {
         
         self.view.endEditing(true)
         
-        let dataArray = ["1年未満", "1 〜 3年", "3 〜 5年", "5 〜 10年", "10年以上"]
+        let dataArray = ["1年未満", "1年以上", "3年以上", "5年以上", "10年以上"]
 
         var defaultIndex: Int? = nil
         if let selectedCareer = self.selectedCareer {
@@ -71,7 +71,7 @@ class ProfilePartnerViewController: KeyboardRespondableViewController {
         
         self.view.endEditing(true)
         
-        let dataArray = ["受付中", "休止中"]
+        let dataArray = ["お仕事受付中", "休止中"]
 
         var defaultIndex: Int? = nil
         if let selectedStatus = self.selectedStatus {

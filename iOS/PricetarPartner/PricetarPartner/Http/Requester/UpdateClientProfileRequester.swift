@@ -9,14 +9,15 @@ import UIKit
 
 class UpdateClientProfileRequester {
         
-    class func update(nickname: String, area: String, useFrequency: String, condition: String, genres: [String], options: [String], message: String, image: UIImage?, completion: @escaping ((Bool) -> ())) {
+    class func update(nickname: String, area: String, useFrequency: String, newCondition: String, oldCondition: String, genres: [String], options: [String], message: String, image: UIImage?, completion: @escaping ((Bool) -> ())) {
         
         var params = ["command": "updateClientProfile"]
         params["userId"] = SaveData.shared.userId
         params["nickname"] = nickname.base64Encode() ?? ""
         params["area"] = area.base64Encode() ?? ""
         params["useFrequency"] = useFrequency.base64Encode() ?? ""
-        params["condition"] = condition.base64Encode() ?? ""
+        params["newCondition"] = newCondition.base64Encode() ?? ""
+        params["oldCondition"] = oldCondition.base64Encode() ?? ""
         params["genres"] = genres.compactMap { $0.base64Encode() }.joined(separator: ",")
         params["options"] = options.compactMap { $0.base64Encode() }.joined(separator: ",")
         params["message"] = message.base64Encode() ?? ""

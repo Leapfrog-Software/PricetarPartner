@@ -20,8 +20,10 @@ struct UserData {
     let area: String
     let profileType: ProfileType
     let clientUseFrequency: String
-    let clientCondition: String
+    let clientNewCondition: String
+    let clientOldCondition: String
     let clientGenres: [String]
+    let clientOptions: [String]
     let clientMessage: String
     let partnerCareer: String
     let partnerStatus: String
@@ -29,6 +31,8 @@ struct UserData {
     let partnerOldPrice: String
     let partnerDangerousPrice: String
     let partnerDangerousMessage: String
+    let partnerBigPrice: String
+    let partnerBigMessage: String
     let partnerInspectionPrice: String
     let partnerInspectionMessage: String
     let partnerMessage: String
@@ -50,16 +54,19 @@ struct UserData {
         self.profileType = profileType
         
         self.clientUseFrequency = (data["clientUseFrequency"] as? String)?.base64Decode() ?? ""
-        self.clientCondition = (data["clientCondition"] as? String)?.base64Decode() ?? ""
+        self.clientNewCondition = (data["clientNewCondition"] as? String)?.base64Decode() ?? ""
+        self.clientOldCondition = (data["clientOldCondition"] as? String)?.base64Decode() ?? ""
         self.clientGenres = (data["clientGenres"] as? String)?.components(separatedBy: ",").compactMap { $0.base64Decode() } ?? []
+        self.clientOptions = (data["clientOptions"] as? String)?.components(separatedBy: ",").compactMap { $0.base64Decode() } ?? []
         self.clientMessage = (data["clientMessage"] as? String)?.base64Decode() ?? ""
         self.partnerCareer = (data["partnerCareer"] as? String)?.base64Decode() ?? ""
         self.partnerStatus = (data["partnerStatus"] as? String)?.base64Decode() ?? ""
-        
         self.partnerNewPrice = data["partnerNewPrice"] as? String ?? ""
         self.partnerOldPrice = data["partnerOldPrice"] as? String ?? ""
         self.partnerDangerousPrice = data["partnerDangerousPrice"] as? String ?? ""
         self.partnerDangerousMessage = (data["partnerDangerousMessage"] as? String)?.base64Decode() ?? ""
+        self.partnerBigPrice = data["partnerBigPrice"] as? String ?? ""
+        self.partnerBigMessage = (data["partnerBigMessage"] as? String)?.base64Decode() ?? ""
         self.partnerInspectionPrice = data["partnerInspectionPrice"] as? String ?? ""
         self.partnerInspectionMessage = (data["partnerInspectionMessage"] as? String)?.base64Decode() ?? ""
         self.partnerMessage = (data["partnerMessage"] as? String)?.base64Decode() ?? ""
