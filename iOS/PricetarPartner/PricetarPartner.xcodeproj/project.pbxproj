@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170757A725E8B8A6003D1ECB /* HomeNewTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757A625E8B8A6003D1ECB /* HomeNewTitleTableViewCell.swift */; };
+		170757AA25E8B8B1003D1ECB /* HomeNewUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757A925E8B8B1003D1ECB /* HomeNewUserTableViewCell.swift */; };
+		170757AD25E8B8BD003D1ECB /* HomePopularTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757AC25E8B8BD003D1ECB /* HomePopularTitleTableViewCell.swift */; };
+		170757B025E8B8C6003D1ECB /* HomePopularUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757AF25E8B8C6003D1ECB /* HomePopularUserTableViewCell.swift */; };
+		170757B325E8BD39003D1ECB /* ImageStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757B225E8BD39003D1ECB /* ImageStorage.swift */; };
+		170757BA25E8C0F7003D1ECB /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757B925E8C0F7003D1ECB /* ClientDetailViewController.swift */; };
+		170757BE25E8C102003D1ECB /* PartnerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757BD25E8C102003D1ECB /* PartnerDetailViewController.swift */; };
+		170757C525E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757C425E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift */; };
 		1750A7F325E2421100E5B346 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A7F225E2421100E5B346 /* Loading.swift */; };
 		1750A7F725E2421900E5B346 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1750A7F625E2421900E5B346 /* Loading.xib */; };
 		1750A7FA25E2425D00E5B346 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A7F925E2425D00E5B346 /* Dialog.swift */; };
@@ -63,6 +71,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		170757A625E8B8A6003D1ECB /* HomeNewTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewTitleTableViewCell.swift; sourceTree = "<group>"; };
+		170757A925E8B8B1003D1ECB /* HomeNewUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewUserTableViewCell.swift; sourceTree = "<group>"; };
+		170757AC25E8B8BD003D1ECB /* HomePopularTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePopularTitleTableViewCell.swift; sourceTree = "<group>"; };
+		170757AF25E8B8C6003D1ECB /* HomePopularUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePopularUserTableViewCell.swift; sourceTree = "<group>"; };
+		170757B225E8BD39003D1ECB /* ImageStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStorage.swift; sourceTree = "<group>"; };
+		170757B925E8C0F7003D1ECB /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
+		170757BD25E8C102003D1ECB /* PartnerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailViewController.swift; sourceTree = "<group>"; };
+		170757C425E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailOptionTableViewCell.swift; sourceTree = "<group>"; };
 		1750A7F225E2421100E5B346 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		1750A7F625E2421900E5B346 /* Loading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
 		1750A7F925E2425D00E5B346 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
@@ -131,6 +147,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		170757B725E8C0D5003D1ECB /* ClientDetail */ = {
+			isa = PBXGroup;
+			children = (
+				170757B925E8C0F7003D1ECB /* ClientDetailViewController.swift */,
+			);
+			path = ClientDetail;
+			sourceTree = "<group>";
+		};
+		170757B825E8C0DE003D1ECB /* PartnerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				170757BD25E8C102003D1ECB /* PartnerDetailViewController.swift */,
+				170757C425E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift */,
+			);
+			path = PartnerDetail;
+			sourceTree = "<group>";
+		};
 		1750A7F025E241FD00E5B346 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +217,12 @@
 			isa = PBXGroup;
 			children = (
 				1750A82825E2494A00E5B346 /* HomeViewController.swift */,
+				170757A625E8B8A6003D1ECB /* HomeNewTitleTableViewCell.swift */,
+				170757A925E8B8B1003D1ECB /* HomeNewUserTableViewCell.swift */,
+				170757AC25E8B8BD003D1ECB /* HomePopularTitleTableViewCell.swift */,
+				170757AF25E8B8C6003D1ECB /* HomePopularUserTableViewCell.swift */,
+				170757B725E8C0D5003D1ECB /* ClientDetail */,
+				170757B825E8C0DE003D1ECB /* PartnerDetail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -302,6 +341,7 @@
 			children = (
 				17CC7C1225E2366000231F18 /* HttpRequester.swift */,
 				17CC7C1725E2366B00231F18 /* ApiRequester.swift */,
+				170757B225E8BD39003D1ECB /* ImageStorage.swift */,
 				17CC7C1025E2364800231F18 /* DataModel */,
 				17CC7C1125E2364D00231F18 /* Requester */,
 			);
@@ -467,6 +507,7 @@
 				1750A82925E2494A00E5B346 /* HomeViewController.swift in Sources */,
 				1750A82125E2484500E5B346 /* ProfileViewController.swift in Sources */,
 				17CC7C2225E236E500231F18 /* String+Extension.swift in Sources */,
+				170757A725E8B8A6003D1ECB /* HomeNewTitleTableViewCell.swift in Sources */,
 				17CC7C2825E2373300231F18 /* UserData.swift in Sources */,
 				1750A83625E24C9D00E5B346 /* ProfileClientViewController.swift in Sources */,
 				1754842325E3466D00FCEB04 /* UpdateClientProfileRequester.swift in Sources */,
@@ -477,11 +518,15 @@
 				17CC7C1F25E236B900231F18 /* RegisterUserRequester.swift in Sources */,
 				1750A83325E2496700E5B346 /* MessageViewController.swift in Sources */,
 				1754841625E33C7400FCEB04 /* ProfileGenreSelectTableViewCell.swift in Sources */,
+				170757AD25E8B8BD003D1ECB /* HomePopularTitleTableViewCell.swift in Sources */,
 				17CC7C1325E2366000231F18 /* HttpRequester.swift in Sources */,
 				1750A83025E2495D00E5B346 /* SearchViewController.swift in Sources */,
 				1754840725E339C100FCEB04 /* PickerViewController.swift in Sources */,
+				170757B325E8BD39003D1ECB /* ImageStorage.swift in Sources */,
 				17CC7C0925E21D1900231F18 /* SplashViewController.swift in Sources */,
+				170757B025E8B8C6003D1ECB /* HomePopularUserTableViewCell.swift in Sources */,
 				1750A83C25E24D6C00E5B346 /* UIColor+Extension.swift in Sources */,
+				170757BA25E8C0F7003D1ECB /* ClientDetailViewController.swift in Sources */,
 				17CC7C3825E23C0000231F18 /* PaddingTextField.swift in Sources */,
 				17CC7C3F25E23CC800231F18 /* CALayer+Extension.swift in Sources */,
 				17CC7C3425E23A6700231F18 /* RegisterUserViewController.swift in Sources */,
@@ -489,12 +534,15 @@
 				1750A81C25E2483500E5B346 /* MyPageViewController.swift in Sources */,
 				1750A7FD25E2426600E5B346 /* DialogButton.swift in Sources */,
 				17CC7C2B25E239A500231F18 /* DateFormatter+Extension.swift in Sources */,
+				170757AA25E8B8B1003D1ECB /* HomeNewUserTableViewCell.swift in Sources */,
 				1750A83925E24CA700E5B346 /* ProfilePartnerViewController.swift in Sources */,
+				170757C525E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift in Sources */,
 				17CC7C2E25E239B900231F18 /* FetchUserRequester.swift in Sources */,
 				17CC7C1825E2366B00231F18 /* ApiRequester.swift in Sources */,
 				1754841225E33C6400FCEB04 /* ProfileGenreSelectViewController.swift in Sources */,
 				1754842025E3443D00FCEB04 /* UIImage+Extension.swift in Sources */,
 				1754841925E342A600FCEB04 /* MultiPickerViewController.swift in Sources */,
+				170757BE25E8C102003D1ECB /* PartnerDetailViewController.swift in Sources */,
 				1750A84625E2562B00E5B346 /* ProfileAreaSelectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,10 +19,11 @@ class TabbarViewController: UIViewController {
     
     func reload() {
         
-//        self.homeViewController.reload()
-//        self.searchViewController.reload()
-//        self.messageViewController.reload()
-//        self.myPageViewController.reload()
+        self.homeViewController.reload()
+        self.entryViewController.reload()
+        self.searchViewController.reload()
+        self.messageViewController.reload()
+        self.myPageViewController.reload()
     }
     
     override func viewDidLoad() {
