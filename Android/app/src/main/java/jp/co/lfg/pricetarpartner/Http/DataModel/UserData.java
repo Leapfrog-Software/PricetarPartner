@@ -49,6 +49,7 @@ public class UserData {
     public String clientNewCondition;
     public String clientOldCondition;
     public ArrayList<String> clientGenres;
+    public ArrayList<String> clientOptions;
     public String clientMessage;
     public String partnerCareer;
     public String partnerStatus;
@@ -85,6 +86,12 @@ public class UserData {
             String[] clientGenres = json.getString("clientGenres").split(",");
             for (int i = 0; i < clientGenres.length; i++) {
                 userData.clientGenres.add(Base64Utility.decode(clientGenres[i]));
+            }
+
+            userData.clientOptions = new ArrayList<>();
+            String[] clientOptions = json.getString("clientOptions").split(",");
+            for (int i = 0; i < clientOptions.length; i++) {
+                userData.clientOptions.add(Base64Utility.decode(clientOptions[i]));
             }
 
             userData.clientMessage = Base64Utility.decode(json.getString("clientMessage"));

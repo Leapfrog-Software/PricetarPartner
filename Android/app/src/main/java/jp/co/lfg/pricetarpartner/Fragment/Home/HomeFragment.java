@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import jp.co.lfg.pricetarpartner.Fragment.BaseFragment;
+import jp.co.lfg.pricetarpartner.Fragment.Home.ClientDetail.ClientDetailFragment;
+import jp.co.lfg.pricetarpartner.Fragment.Home.PartnerDetail.PartnerDetailFragment;
 import jp.co.lfg.pricetarpartner.Http.DataModel.UserData;
 import jp.co.lfg.pricetarpartner.Http.Requester.FetchUserRequester;
 import jp.co.lfg.pricetarpartner.R;
@@ -44,6 +46,17 @@ public class HomeFragment extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 HomeAdapter.AdapterData data = (HomeAdapter.AdapterData)parent.getItemAtPosition(position);
 
+                if (data.type == HomeAdapter.AdapterType.user) {
+                    if (data.userData.profileType == UserData.ProfileType.client) {
+                        ClientDetailFragment fragment = new ClientDetailFragment();
+                        fragment.set(data.userData);
+                        getTabbar().stackFragment(fragment, AnimationType.horizontal);
+                    } else if (data.userData.profileType == UserData.ProfileType.partner) {
+                        PartnerDetailFragment fragment = new PartnerDetailFragment();
+                        fragment.set(data.userData);
+                        getTabbar().stackFragment(fragment, AnimationType.horizontal);
+                    }
+                }
             }
         });
     }
