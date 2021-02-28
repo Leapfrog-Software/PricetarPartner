@@ -13,6 +13,17 @@ struct UserData {
         case none = "0"
         case client = "1"
         case partner = "2"
+        
+        func toText() -> String {
+            switch self {
+            case .none:
+                return ""
+            case .client:
+                return "クライアント"
+            case .partner:
+                return "パートナー"
+            }
+        }
     }
         
     let id: String
@@ -61,13 +72,13 @@ struct UserData {
         self.clientMessage = (data["clientMessage"] as? String)?.base64Decode() ?? ""
         self.partnerCareer = (data["partnerCareer"] as? String)?.base64Decode() ?? ""
         self.partnerStatus = (data["partnerStatus"] as? String)?.base64Decode() ?? ""
-        self.partnerNewPrice = data["partnerNewPrice"] as? String ?? ""
-        self.partnerOldPrice = data["partnerOldPrice"] as? String ?? ""
-        self.partnerDangerousPrice = data["partnerDangerousPrice"] as? String ?? ""
+        self.partnerNewPrice = (data["partnerNewPrice"] as? String)?.base64Decode() ?? ""
+        self.partnerOldPrice = (data["partnerOldPrice"] as? String)?.base64Decode() ?? ""
+        self.partnerDangerousPrice = (data["partnerDangerousPrice"] as? String)?.base64Decode() ?? ""
         self.partnerDangerousMessage = (data["partnerDangerousMessage"] as? String)?.base64Decode() ?? ""
-        self.partnerBigPrice = data["partnerBigPrice"] as? String ?? ""
+        self.partnerBigPrice = (data["partnerBigPrice"] as? String)?.base64Decode() ?? ""
         self.partnerBigMessage = (data["partnerBigMessage"] as? String)?.base64Decode() ?? ""
-        self.partnerInspectionPrice = data["partnerInspectionPrice"] as? String ?? ""
+        self.partnerInspectionPrice = (data["partnerInspectionPrice"] as? String)?.base64Decode() ?? ""
         self.partnerInspectionMessage = (data["partnerInspectionMessage"] as? String)?.base64Decode() ?? ""
         self.partnerMessage = (data["partnerMessage"] as? String)?.base64Decode() ?? ""
         

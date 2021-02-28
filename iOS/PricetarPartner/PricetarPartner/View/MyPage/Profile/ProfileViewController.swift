@@ -44,8 +44,10 @@ class ProfileViewController: UIViewController {
         }
         // マイページから遷移
         else {
+            self.getTabbarViewController()?.reload()
+            
             let action = DialogAction(title: "OK", action: { [weak self] in
-                self?.parent?.pop(animationType: .horizontal)
+                self?.pop(animationType: .horizontal)
             })
             Dialog.show(style: .success, title: "確認", message: "更新しました", actions: [action])
         }

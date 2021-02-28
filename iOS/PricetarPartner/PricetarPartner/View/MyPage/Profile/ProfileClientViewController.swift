@@ -28,6 +28,31 @@ class ProfileClientViewController: KeyboardRespondableViewController {
     private var selectedOptions = [String]()
     private let imagePicker = ImagePickerManager()
     private var selectedImage: UIImage?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId) else {
+            return
+        }
+        self.nicknameTextField.text = myUserData.nickname
+        self.areaLabel.text = myUserData.area
+        self.useFreqencyLabel.text = myUserData.clientUseFrequency
+        self.newConditionLabel.text = myUserData.clientNewCondition
+        self.oldConditionLabel.text = myUserData.clientOldCondition
+        self.genreLabel.text = myUserData.clientGenres.joined(separator: ", ")
+        self.optionLabel.text = myUserData.clientOptions.joined(separator: ", ")
+        self.messageTextView.text = myUserData.clientMessage
+        
+        ImageStorage.shared.fetch(url: UserData.imageUrl(userId: myUserData.id), imageView: self.userImageView, errorImage: UIImage(named: "profile_image_guide"), completion: nil)
+        
+        self.selectedArea = myUserData.area
+        self.selectedUseFrequency = (myUserData.clientUseFrequency.count > 0) ? myUserData.clientUseFrequency : nil
+        self.selectedNewCondition = (myUserData.clientNewCondition.count > 0) ? myUserData.clientNewCondition : nil
+        self.selectedOldCondition = (myUserData.clientOldCondition.count > 0) ? myUserData.clientOldCondition : nil
+        self.selectedGenres = myUserData.clientGenres
+        self.selectedOptions = myUserData.clientOptions
+    }
         
     @IBAction func didEndOnExitTextField(_ sender: Any) {
         self.view.endEditing(true)
