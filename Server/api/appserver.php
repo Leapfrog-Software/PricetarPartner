@@ -68,13 +68,14 @@ function updateClientProfile() {
 	$nickname = getPostParam("nickname");
 	$area = getPostParam("area");
 	$useFrequency = getPostParam("useFrequency");
-	$condition = getPostParam("condition");
+	$newCondition = getPostParam("newCondition");
+	$oldCondition = getPostParam("oldCondition");
 	$genres = getPostParam("genres");
 	$options = getPostParam("options");
 	$message = getPostParam("message");
 	$image = getPostParam("image");
 
-	if (User::updateClientProfile($userId, $nickname, $area, $useFrequency, $condition, $genres, $options, $message, $image)) {
+	if (User::updateClientProfile($userId, $nickname, $area, $useFrequency, $newCondition, $oldCondition, $genres, $options, $message, $image)) {
 		echo(json_encode(Array("result" => "0")));
 	} else {
 		echo(json_encode(Array("result" => "1")));

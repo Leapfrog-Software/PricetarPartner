@@ -13,7 +13,8 @@ class User {
 	public $area;
 	public $profileType;
 	public $clientUseFrequency;
-	public $clientCondition;
+	public $clientNewCondition;
+	public $clientOldCondition;
 	public $clientGenres;
 	public $clientOptions;
 	public $clientMessage;
@@ -42,7 +43,7 @@ class User {
 		}
 
 		$datas = explode("\n", $fileData);
-		if (count($datas) >= 24) {
+		if (count($datas) >= 25) {
 			$data = new User();
 			$data->id = $datas[0];
 			$data->email = $datas[1];
@@ -51,23 +52,24 @@ class User {
 			$data->area = $datas[4];
 			$data->profileType = $datas[5];
 			$data->clientUseFrequency = $datas[6];
-			$data->clientCondition = $datas[7];
-			$data->clientGenres = $datas[8];
-			$data->clientOptions = $datas[9];
-			$data->clientMessage = $datas[10];
-			$data->partnerCareer = $datas[11];
-			$data->partnerStatus = $datas[12];
-			$data->partnerNewPrice = $datas[13];
-			$data->partnerOldPrice = $datas[14];
-			$data->partnerDangerousPrice = $datas[15];
-			$data->partnerDangerousMessage = $datas[16];
-			$data->partnerBigPrice = $datas[17];
-			$data->partnerBigMessage = $datas[18];
-			$data->partnerInspectionPrice = $datas[19];
-			$data->partnerInspectionMessage = $datas[20];
-			$data->partnerMessage = $datas[21];
-			$data->loginDatetime = $datas[22];
-			$data->deviceToken = $datas[23];
+			$data->clientNewCondition = $datas[7];
+			$data->clientOldCondition = $datas[8];
+			$data->clientGenres = $datas[9];
+			$data->clientOptions = $datas[10];
+			$data->clientMessage = $datas[11];
+			$data->partnerCareer = $datas[12];
+			$data->partnerStatus = $datas[13];
+			$data->partnerNewPrice = $datas[14];
+			$data->partnerOldPrice = $datas[15];
+			$data->partnerDangerousPrice = $datas[16];
+			$data->partnerDangerousMessage = $datas[17];
+			$data->partnerBigPrice = $datas[18];
+			$data->partnerBigMessage = $datas[19];
+			$data->partnerInspectionPrice = $datas[20];
+			$data->partnerInspectionMessage = $datas[21];
+			$data->partnerMessage = $datas[22];
+			$data->loginDatetime = $datas[23];
+			$data->deviceToken = $datas[24];
 			return $data;
 		}
 		return null;
@@ -82,7 +84,8 @@ class User {
 				. $this->area . "\n"
 				. $this->profileType . "\n"
 				. $this->clientUseFrequency . "\n"
-				. $this->clientCondition . "\n"
+				. $this->clientNewCondition . "\n"
+				. $this->clientOldCondition . "\n"
 				. $this->clientGenres . "\n"
 				. $this->clientOptions . "\n"
 				. $this->clientMessage . "\n"
@@ -108,7 +111,8 @@ class User {
 					 "area" => $this->area,
 					 "profileType" => $this->profileType,
 					 "clientUseFrequency" => $this->clientUseFrequency,
-					 "clientCondition" => $this->clientCondition,
+					 "clientNewCondition" => $this->clientNewCondition,
+					 "clientOldCondition" => $this->clientOldCondition,
 					 "clientGenres" => $this->clientGenres,
 					 "clientOptions" => $this->clientOptions,
 					 "clientMessage" => $this->clientMessage,
@@ -162,7 +166,8 @@ class User {
 		$user->area = "";
 		$user->profileType = User::PROFILE_TYPE_NONE;
 		$user->clientUseFrequency = "";
-		$user->clientCondition = "";
+		$user->clientNewCondition = "";
+		$user->clientOldCondition = "";
 		$user->clientGenres = "";
 		$user->clientOptions = "";
 		$user->clientMessage = "";
@@ -191,7 +196,7 @@ class User {
 		return null;
 	}
 
-	static function updateClientProfile($userId, $nickname, $area, $useFrequency, $condition, $genres, $options, $message, $image) {
+	static function updateClientProfile($userId, $nickname, $area, $useFrequency, $newCondition, $oldCondition, $genres, $options, $message, $image) {
 
 		$user = User::read($userId);
 		if (is_null($user)) {
@@ -201,7 +206,8 @@ class User {
 		$user->area = $area;
 		$user->profileType = User::PROFILE_TYPE_CLIENT;
 		$user->clientUseFrequency = $useFrequency;
-		$user->clientCondition = $condition;
+		$user->clientNewCondition = $newCondition;
+		$user->clientOldCondition = $oldCondition;
 		$user->clientGenres = $genres;
 		$user->clientOptions = $options;
 		$user->clientMessage = $message;
