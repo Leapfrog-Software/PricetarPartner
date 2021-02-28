@@ -16,7 +16,7 @@ import jp.co.lfg.pricetarpartner.System.SaveData;
 
 public class UpdateClientProfileRequester {
 
-    public static void update(String nickanme, String area, String useFrequency, String condition, ArrayList<String> genres, ArrayList<String> options, String message, Bitmap image, final Callback callback) {
+    public static void update(String nickanme, String area, String useFrequency, String newCondition, String oldCondition, ArrayList<String> genres, ArrayList<String> options, String message, Bitmap image, final Callback callback) {
 
         HashMap<String, String> params = new HashMap<>();
         params.put("command", "updateClientProfile");
@@ -24,7 +24,8 @@ public class UpdateClientProfileRequester {
         params.put("nickname", Base64Utility.encode(nickanme));
         params.put("area", Base64Utility.encode(area));
         params.put("useFrequency", Base64Utility.encode(useFrequency));
-        params.put("condition", Base64Utility.encode(condition));
+        params.put("newCondition", Base64Utility.encode(newCondition));
+        params.put("oldCondition", Base64Utility.encode(oldCondition));
 
         StringJoiner genreJoiner = new StringJoiner(",");
         for (String genre : genres) {

@@ -39,6 +39,17 @@ public class UserData {
                 return "2";
             }
         }
+
+        public String toText() {
+
+            if (this == none) {
+                return "";
+            } else if (this == client) {
+                return "クライアント";
+            } else {
+                return "パートナー";
+            }
+        }
     }
 
     public String id;

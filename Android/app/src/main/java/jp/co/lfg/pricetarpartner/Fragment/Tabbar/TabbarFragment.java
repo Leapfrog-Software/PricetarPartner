@@ -32,10 +32,11 @@ public class TabbarFragment extends BaseFragment {
 
     public void reload() {
 
-//        mHomeFragment.reload();
-//        mMessageFragment.reload();
-//        mSearchFragment.reload();
-//        mMyPageFragment.reload();
+        mHomeFragment.reload();
+        mEntryFragment.reload();
+        mMessageFragment.reload();
+        mSearchFragment.reload();
+        mMyPageFragment.reload();
     }
 
     @Override
