@@ -19,6 +19,8 @@ import jp.co.lfg.pricetarpartner.Fragment.Common.Dialog;
 import jp.co.lfg.pricetarpartner.Fragment.Common.Loading;
 import jp.co.lfg.pricetarpartner.Fragment.Common.Picker.PickerFragment;
 import jp.co.lfg.pricetarpartner.Fragment.MyPage.Profile.AreaSelect.ProfileAreaSelectFragment;
+import jp.co.lfg.pricetarpartner.Http.DataModel.UserData;
+import jp.co.lfg.pricetarpartner.Http.ImageStorage;
 import jp.co.lfg.pricetarpartner.Http.Requester.FetchUserRequester;
 import jp.co.lfg.pricetarpartner.Http.Requester.UpdatePartnerProfileRequester;
 import jp.co.lfg.pricetarpartner.R;
@@ -26,6 +28,7 @@ import jp.co.lfg.pricetarpartner.System.BitmapUtility;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
 import jp.co.lfg.pricetarpartner.System.GalleryManager;
 import jp.co.lfg.pricetarpartner.System.RoundOutlineProvider;
+import jp.co.lfg.pricetarpartner.System.SaveData;
 
 public class ProfilePartnerFragment extends BaseFragment {
 
@@ -48,6 +51,31 @@ public class ProfilePartnerFragment extends BaseFragment {
     private void initContents(View view) {
 
         RoundOutlineProvider.setOutline(view.findViewById(R.id.userImageView), (int)(80 * DeviceUtility.getDeviceDensity()));
+
+        UserData myUserData = FetchUserRequester.getInstance().query(SaveData.getInstance().userId);
+        if (myUserData == null) {
+            return;
+        }
+
+        ((EditText)view.findViewById(R.id.nicknameEditText)).setText(myUserData.nickname);
+        ((TextView)view.findViewById(R.id.areaTextView)).setText(myUserData.area);
+        ((TextView)view.findViewById(R.id.careerTextView)).setText(myUserData.partnerCareer);
+        ((TextView)view.findViewById(R.id.statusTextView)).setText(myUserData.partnerStatus);
+        ((EditText)view.findViewById(R.id.oldPriceEditText)).setText(myUserData.partnerOldPrice);
+        ((EditText)view.findViewById(R.id.newPriceEditText)).setText(myUserData.partnerNewPrice);
+        ((EditText)view.findViewById(R.id.dangerousPriceEditText)).setText(myUserData.partnerDangerousPrice);
+        ((EditText)view.findViewById(R.id.dangerousMessageEditText)).setText(myUserData.partnerDangerousMessage);
+        ((EditText)view.findViewById(R.id.bigPriceEditText)).setText(myUserData.partnerBigPrice);
+        ((EditText)view.findViewById(R.id.bigMessageEditText)).setText(myUserData.partnerBigMessage);
+        ((EditText)view.findViewById(R.id.inspectionPriceEditText)).setText(myUserData.partnerInspectionPrice);
+        ((EditText)view.findViewById(R.id.inspectionMessageEditText)).setText(myUserData.partnerInspectionMessage);
+        ((EditText)view.findViewById(R.id.messageEditText)).setText(myUserData.partnerMessage);
+
+        ImageStorage.getInstance().fetch(UserData.getImageUrl(myUserData.id), (ImageView)view.findViewById(R.id.userImageView), R.drawable.no_image);
+
+        mSelectedArea = (myUserData.area.length() > 0) ? myUserData.area : null;
+        mSelectedCareer = (myUserData.partnerCareer.length() > 0) ? myUserData.partnerCareer : null;
+        mSelectedStatus = (myUserData.partnerStatus.length() > 0) ? myUserData.partnerStatus : null;
     }
 
     private void initAction(View view) {

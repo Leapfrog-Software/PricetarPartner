@@ -23,6 +23,8 @@ import jp.co.lfg.pricetarpartner.Fragment.Common.Picker.MultiPickerFragment;
 import jp.co.lfg.pricetarpartner.Fragment.Common.Picker.PickerFragment;
 import jp.co.lfg.pricetarpartner.Fragment.MyPage.Profile.AreaSelect.ProfileAreaSelectFragment;
 import jp.co.lfg.pricetarpartner.Fragment.MyPage.Profile.GenreSelect.ProfileGenreSelectFragment;
+import jp.co.lfg.pricetarpartner.Http.DataModel.UserData;
+import jp.co.lfg.pricetarpartner.Http.ImageStorage;
 import jp.co.lfg.pricetarpartner.Http.Requester.FetchUserRequester;
 import jp.co.lfg.pricetarpartner.Http.Requester.UpdateClientProfileRequester;
 import jp.co.lfg.pricetarpartner.R;
@@ -30,12 +32,14 @@ import jp.co.lfg.pricetarpartner.System.BitmapUtility;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
 import jp.co.lfg.pricetarpartner.System.GalleryManager;
 import jp.co.lfg.pricetarpartner.System.RoundOutlineProvider;
+import jp.co.lfg.pricetarpartner.System.SaveData;
 
 public class ProfileClientFragment extends BaseFragment {
 
     private String mSelectedArea = null;
     private String mSelectedUseFrequency = null;
-    private String mSelectedCondition = null;
+    private String mSelectedNewCondition = null;
+    private String mSelectedOldCondition = null;
     private ArrayList<String> mSelectedGenres = new ArrayList<>();
     private ArrayList<String> mSelectedOptions = new ArrayList<>();
     private Bitmap mSelectedBitmap = null;
@@ -54,6 +58,40 @@ public class ProfileClientFragment extends BaseFragment {
     private void initContents(View view) {
 
         RoundOutlineProvider.setOutline(view.findViewById(R.id.userImageView), (int)(80 * DeviceUtility.getDeviceDensity()));
+
+        UserData myUserData = FetchUserRequester.getInstance().query(SaveData.getInstance().userId);
+        if (myUserData == null) {
+            return;
+        }
+
+        ((EditText)view.findViewById(R.id.nicknameEditText)).setText(myUserData.nickname);
+        ((TextView)view.findViewById(R.id.areaTextView)).setText(myUserData.area);
+        ((TextView)view.findViewById(R.id.useFrequencyTextView)).setText(myUserData.clientUseFrequency);
+        ((TextView)view.findViewById(R.id.newConditionTextView)).setText(myUserData.clientNewCondition);
+        ((TextView)view.findViewById(R.id.oldConditionTextView)).setText(myUserData.clientOldCondition);
+
+        StringJoiner genreJoiner = new StringJoiner(", ");
+        for (String genre : myUserData.clientGenres) {
+            genreJoiner.add(genre);
+        }
+        ((TextView)view.findViewById(R.id.genreTextView)).setText(genreJoiner.toString());
+
+        StringJoiner optionJoiner = new StringJoiner(", ");
+        for (String option : myUserData.clientOptions) {
+            optionJoiner.add(option);
+        }
+        ((TextView)view.findViewById(R.id.optionTextView)).setText(optionJoiner.toString());
+
+        ((EditText)view.findViewById(R.id.messageEditText)).setText(myUserData.clientMessage);
+
+        ImageStorage.getInstance().fetch(UserData.getImageUrl(myUserData.id), (ImageView)view.findViewById(R.id.userImageView), R.drawable.no_image);
+
+        mSelectedArea = myUserData.area;
+        mSelectedUseFrequency = (myUserData.clientUseFrequency.length() > 0) ? myUserData.clientUseFrequency : null;
+        mSelectedNewCondition = (myUserData.clientNewCondition.length() > 0) ? myUserData.clientNewCondition : null;
+        mSelectedOldCondition = (myUserData.clientOldCondition.length() > 0) ? myUserData.clientOldCondition : null;
+        mSelectedGenres = (ArrayList<String>) myUserData.clientGenres.clone();
+        mSelectedOptions = (ArrayList<String>) myUserData.clientOptions.clone();
     }
 
     private void initAction(View view) {
@@ -100,24 +138,47 @@ public class ProfileClientFragment extends BaseFragment {
                 });
             }
         });
-        view.findViewById(R.id.conditionLayout).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.newConditionLayout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DeviceUtility.hideSoftKeyboard();
 
-                final ArrayList<String> dataList = new ArrayList(Arrays.asList("新品", "中古"));
+                final ArrayList<String> dataList = new ArrayList(Arrays.asList("0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"));
 
                 Integer defaultIndex = null;
-                if (mSelectedCondition != null) {
-                    defaultIndex = dataList.indexOf(mSelectedCondition);
+                if (mSelectedNewCondition != null) {
+                    defaultIndex = dataList.indexOf(mSelectedNewCondition);
                 }
                 PickerFragment.show(getProfileFragment(), "お取り扱い商品のコンディション", defaultIndex, dataList, new PickerFragment.Callback() {
                     @Override
                     public void didSelect(int index) {
                         View view = getView();
                         if (view != null) {
-                            ((TextView)view.findViewById(R.id.conditionTextView)).setText(dataList.get(index));
-                            mSelectedCondition = dataList.get(index);
+                            ((TextView)view.findViewById(R.id.newConditionTextView)).setText(dataList.get(index));
+                            mSelectedNewCondition = dataList.get(index);
+                        }
+                    }
+                });
+            }
+        });
+        view.findViewById(R.id.oldConditionLayout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DeviceUtility.hideSoftKeyboard();
+
+                final ArrayList<String> dataList = new ArrayList(Arrays.asList("0%", "10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%", "90%", "100%"));
+
+                Integer defaultIndex = null;
+                if (mSelectedOldCondition != null) {
+                    defaultIndex = dataList.indexOf(mSelectedOldCondition);
+                }
+                PickerFragment.show(getProfileFragment(), "お取り扱い商品のコンディション", defaultIndex, dataList, new PickerFragment.Callback() {
+                    @Override
+                    public void didSelect(int index) {
+                        View view = getView();
+                        if (view != null) {
+                            ((TextView)view.findViewById(R.id.oldConditionTextView)).setText(dataList.get(index));
+                            mSelectedOldCondition = dataList.get(index);
                         }
                     }
                 });
@@ -238,7 +299,7 @@ public class ProfileClientFragment extends BaseFragment {
             Dialog.show(Dialog.Style.error, "エラー", "月間のご利用見込み数が選択されていません");
             return;
         }
-        if (mSelectedCondition == null) {
+        if ((mSelectedNewCondition == null) || (mSelectedOldCondition == null)) {
             Dialog.show(Dialog.Style.error, "エラー", "お取り扱い商品のコンディションが選択されていません");
             return;
         }
@@ -247,7 +308,7 @@ public class ProfileClientFragment extends BaseFragment {
 
         Loading.start();
 
-        UpdateClientProfileRequester.update(nickname, mSelectedArea, mSelectedUseFrequency, mSelectedCondition, mSelectedGenres, mSelectedOptions, message, mSelectedBitmap, new UpdateClientProfileRequester.Callback() {
+        UpdateClientProfileRequester.update(nickname, mSelectedArea, mSelectedUseFrequency, mSelectedNewCondition, mSelectedOldCondition, mSelectedGenres, mSelectedOptions, message, mSelectedBitmap, new UpdateClientProfileRequester.Callback() {
             @Override
             public void didReceiveData(boolean resultUpdate) {
                 FetchUserRequester.getInstance().fetch(new FetchUserRequester.Callback() {

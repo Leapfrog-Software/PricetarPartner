@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 
 import jp.co.lfg.pricetarpartner.Fragment.Common.Dialog;
 import jp.co.lfg.pricetarpartner.Fragment.Common.Loading;
 import jp.co.lfg.pricetarpartner.Fragment.Splash.SplashFragment;
+import jp.co.lfg.pricetarpartner.Http.ImageStorage;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
 import jp.co.lfg.pricetarpartner.System.GalleryManager;
 import jp.co.lfg.pricetarpartner.System.PermissionManager;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Dialog.initialize(this);
         SaveData.getInstance().initialize(this);
         DeviceUtility.initialize(this);
+        ImageStorage.initialize(this);
         GalleryManager.initialize(this);
         PermissionManager.initialize(this);
 

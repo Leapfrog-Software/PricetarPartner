@@ -10,6 +10,11 @@ import jp.co.lfg.pricetarpartner.R;
 
 public class SearchFragment extends BaseFragment {
 
+    public void reload() {
+
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstance) {
 

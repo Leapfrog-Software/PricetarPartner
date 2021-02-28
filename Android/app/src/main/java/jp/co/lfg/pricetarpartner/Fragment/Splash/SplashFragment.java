@@ -10,6 +10,9 @@ import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+
 import jp.co.lfg.pricetarpartner.Fragment.BaseFragment;
 import jp.co.lfg.pricetarpartner.Fragment.Common.Dialog;
 import jp.co.lfg.pricetarpartner.Fragment.Common.Loading;
@@ -60,7 +63,7 @@ public class SplashFragment extends BaseFragment {
         });
     }
 
-    private void fetch() {
+    public void fetch() {
 
         FetchUserRequester.getInstance().fetch(new FetchUserRequester.Callback() {
             @Override
@@ -68,6 +71,25 @@ public class SplashFragment extends BaseFragment {
                 UserData myUserData = FetchUserRequester.getInstance().query(SaveData.getInstance().userId);
                 if ((myUserData != null) && (myUserData.profileType != UserData.ProfileType.none)) {
                     stackFragment(new TabbarFragment(), AnimationType.none);
+
+                    // プロフィール画面があれば閉じる
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            FragmentActivity activity = getActivity();
+                            if (activity != null) {
+                                for (Fragment fragment : activity.getSupportFragmentManager().getFragments()) {
+                                    if (fragment instanceof RegisterUserFragment) {
+                                        ((RegisterUserFragment)fragment).popFragment(AnimationType.none);
+                                    }
+                                    if (fragment instanceof ProfileFragment) {
+                                        ((ProfileFragment)fragment).close(AnimationType.none);
+                                    }
+                                }
+                            }
+                        }
+                    }, 500);
+
                 } else {
                     showLoginLayout();
                 }

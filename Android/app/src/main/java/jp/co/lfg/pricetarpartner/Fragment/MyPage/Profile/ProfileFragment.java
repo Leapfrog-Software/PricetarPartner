@@ -7,10 +7,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import jp.co.lfg.pricetarpartner.Fragment.BaseFragment;
+import jp.co.lfg.pricetarpartner.Fragment.Common.Dialog;
+import jp.co.lfg.pricetarpartner.Fragment.Splash.SplashFragment;
+import jp.co.lfg.pricetarpartner.Fragment.Tabbar.TabbarFragment;
 import jp.co.lfg.pricetarpartner.Http.DataModel.UserData;
 import jp.co.lfg.pricetarpartner.Http.Requester.FetchUserRequester;
 import jp.co.lfg.pricetarpartner.R;
@@ -134,16 +139,33 @@ public class ProfileFragment extends BaseFragment {
     public void didUpdate() {
 
         // スプラッシュから遷移(ログイン後プロフィール未設定)
-        if (mTransitionSource == TransitionSource.splash) {
-
-        }
         // 新規登録画面から遷移(新規登録済みプロフィール未設定)
-        else if (mTransitionSource == TransitionSource.register) {
-
+        if ((mTransitionSource == TransitionSource.splash) || (mTransitionSource == TransitionSource.register)) {
+            FragmentActivity activity = getActivity();
+            if (activity != null) {
+                for (Fragment fragment : activity.getSupportFragmentManager().getFragments()) {
+                    if (fragment instanceof SplashFragment) {
+                        ((SplashFragment)fragment).fetch();
+                        return;
+                    }
+                }
+            }
         }
         // マイページから遷移
         else {
-
+            TabbarFragment tabbar = getTabbar();
+            if (tabbar != null) {
+                tabbar.reload();
+            }
+            Dialog.Action action = new Dialog.Action();
+            action.title = "OK";
+            action.callback = new Dialog.Callback() {
+                @Override
+                public void didClose() {
+                    close(AnimationType.horizontal);
+                }
+            };
+            Dialog.show(Dialog.Style.success, "確認", "更新しました", action);
         }
     }
 }

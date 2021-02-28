@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import jp.co.lfg.pricetarpartner.System.Base64Utility;
+import jp.co.lfg.pricetarpartner.System.Constants;
 import jp.co.lfg.pricetarpartner.System.DateUtility;
 
 public class UserData {
@@ -38,6 +39,17 @@ public class UserData {
                 return "2";
             }
         }
+
+        public String toText() {
+
+            if (this == none) {
+                return "";
+            } else if (this == client) {
+                return "クライアント";
+            } else {
+                return "パートナー";
+            }
+        }
     }
 
     public String id;
@@ -45,8 +57,10 @@ public class UserData {
     public String area;
     public ProfileType profileType;
     public String clientUseFrequency;
-    public String clientCondition;
+    public String clientNewCondition;
+    public String clientOldCondition;
     public ArrayList<String> clientGenres;
+    public ArrayList<String> clientOptions;
     public String clientMessage;
     public String partnerCareer;
     public String partnerStatus;
@@ -76,12 +90,19 @@ public class UserData {
             }
 
             userData.clientUseFrequency = Base64Utility.decode(json.getString("clientUseFrequency"));
-            userData.clientCondition = Base64Utility.decode(json.getString("clientCondition"));
+            userData.clientNewCondition = Base64Utility.decode(json.getString("clientNewCondition"));
+            userData.clientOldCondition = Base64Utility.decode(json.getString("clientOldCondition"));
 
             userData.clientGenres = new ArrayList<>();
             String[] clientGenres = json.getString("clientGenres").split(",");
             for (int i = 0; i < clientGenres.length; i++) {
                 userData.clientGenres.add(Base64Utility.decode(clientGenres[i]));
+            }
+
+            userData.clientOptions = new ArrayList<>();
+            String[] clientOptions = json.getString("clientOptions").split(",");
+            for (int i = 0; i < clientOptions.length; i++) {
+                userData.clientOptions.add(Base64Utility.decode(clientOptions[i]));
             }
 
             userData.clientMessage = Base64Utility.decode(json.getString("clientMessage"));
@@ -107,5 +128,26 @@ public class UserData {
         } catch (Exception e) {}
 
         return null;
+    }
+
+    public static String getImageUrl(String userId) {
+        return Constants.ServerRootUrl + "data/user/" + userId + "/image";
+    }
+
+    public String lastLoginString() {
+
+        long diff = ((new Date()).getTime() - this.loginDatetime.getTime()) / 1000;
+
+        if (diff < 60) {
+            return "たった今";
+        } else if (diff < 60 * 60) {
+            return String.valueOf((int)Math.floor(diff / 60)) + "分前";
+        } else if (diff < 24 * 60 * 60) {
+            return String.valueOf((int)Math.floor(diff / 60 / 60)) + "時間前";
+        } else if (diff < 30 * 24 * 60 * 60) {
+            return String.valueOf((int)Math.floor(diff / 60 / 60 / 24)) + "日前";
+        } else {
+            return "1ヶ月以上前";
+        }
     }
 }

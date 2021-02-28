@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import jp.co.lfg.pricetarpartner.Fragment.Tabbar.TabbarFragment;
 import jp.co.lfg.pricetarpartner.R;
 import jp.co.lfg.pricetarpartner.System.DeviceUtility;
 
@@ -133,5 +134,21 @@ public class BaseFragment extends Fragment {
             transaction.remove(this);
             transaction.commitAllowingStateLoss();
         }
+    }
+
+    public TabbarFragment getTabbar() {
+
+        FragmentActivity activity = getActivity();
+        if (activity != null) {
+            FragmentManager manager = activity.getSupportFragmentManager();
+            if (manager != null) {
+                for (Fragment fragment : manager.getFragments()) {
+                    if (fragment instanceof TabbarFragment) {
+                        return (TabbarFragment)fragment;
+                    }
+                }
+            }
+        }
+        return null;
     }
 }
