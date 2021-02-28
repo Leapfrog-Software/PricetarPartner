@@ -222,12 +222,25 @@
                                             <action selector="onTapBack:" destination="drW-SH-Cg8" eventType="touchUpInside" id="BQl-0c-ndV"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-3W-CxY">
+                                        <rect key="frame" x="354" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Cqp-tG-cMG"/>
+                                        </constraints>
+                                        <state key="normal" image="message"/>
+                                        <connections>
+                                            <action selector="onTapMessage:" destination="drW-SH-Cg8" eventType="touchUpInside" id="m2g-PQ-OR7"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95858055350000004" green="0.73331314329999997" blue="0.36068996790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Wyz-IK-ZPI" firstAttribute="leading" secondItem="qLc-mg-iCS" secondAttribute="leading" id="2VS-wm-2Sq"/>
                                     <constraint firstAttribute="bottom" secondItem="Wyz-IK-ZPI" secondAttribute="bottom" id="7R2-FA-hPL"/>
                                     <constraint firstItem="72P-WR-E11" firstAttribute="centerY" secondItem="qLc-mg-iCS" secondAttribute="centerY" id="KHK-ax-1Pb"/>
+                                    <constraint firstAttribute="trailing" secondItem="vAb-3W-CxY" secondAttribute="trailing" id="KOZ-dM-9sl"/>
+                                    <constraint firstAttribute="bottom" secondItem="vAb-3W-CxY" secondAttribute="bottom" id="LaY-Hh-EoU"/>
+                                    <constraint firstItem="vAb-3W-CxY" firstAttribute="top" secondItem="qLc-mg-iCS" secondAttribute="top" id="Zed-EC-wxz"/>
                                     <constraint firstAttribute="height" constant="60" id="fGG-4p-ZYG"/>
                                     <constraint firstItem="Wyz-IK-ZPI" firstAttribute="top" secondItem="qLc-mg-iCS" secondAttribute="top" id="kcH-2e-bJT"/>
                                     <constraint firstItem="72P-WR-E11" firstAttribute="leading" secondItem="Wyz-IK-ZPI" secondAttribute="trailing" constant="10" id="rGH-nN-t5T"/>
@@ -673,14 +686,27 @@
                                             <action selector="onTapBack:" destination="DGo-18-lZX" eventType="touchUpInside" id="JSG-nq-Ovd"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f81-rN-6Ny">
+                                        <rect key="frame" x="354" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="20h-aR-NmU"/>
+                                        </constraints>
+                                        <state key="normal" image="message"/>
+                                        <connections>
+                                            <action selector="onTapMessage:" destination="DGo-18-lZX" eventType="touchUpInside" id="XUD-DH-NU3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.95858055350000004" green="0.73331314329999997" blue="0.36068996790000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="f81-rN-6Ny" secondAttribute="bottom" id="1wR-kk-Nwf"/>
                                     <constraint firstItem="LxX-AF-NWv" firstAttribute="leading" secondItem="HBD-yz-dzN" secondAttribute="trailing" constant="10" id="9rJ-Xe-qwD"/>
                                     <constraint firstAttribute="height" constant="60" id="EaS-pU-YZg"/>
                                     <constraint firstItem="HBD-yz-dzN" firstAttribute="top" secondItem="7NB-6A-Kfu" secondAttribute="top" id="GpW-QN-zpQ"/>
                                     <constraint firstAttribute="trailing" secondItem="LxX-AF-NWv" secondAttribute="trailing" constant="70" id="HHc-sd-Me6"/>
                                     <constraint firstItem="HBD-yz-dzN" firstAttribute="leading" secondItem="7NB-6A-Kfu" secondAttribute="leading" id="WbA-hh-dCz"/>
+                                    <constraint firstAttribute="trailing" secondItem="f81-rN-6Ny" secondAttribute="trailing" id="ffS-yz-0Ai"/>
+                                    <constraint firstItem="f81-rN-6Ny" firstAttribute="top" secondItem="7NB-6A-Kfu" secondAttribute="top" id="fkw-lV-kep"/>
                                     <constraint firstAttribute="bottom" secondItem="HBD-yz-dzN" secondAttribute="bottom" id="mF5-Ls-e0e"/>
                                     <constraint firstItem="LxX-AF-NWv" firstAttribute="centerY" secondItem="7NB-6A-Kfu" secondAttribute="centerY" id="tHw-fo-5tY"/>
                                 </constraints>
@@ -1173,6 +1199,7 @@
     </scenes>
     <resources>
         <image name="back" width="100" height="100"/>
+        <image name="message" width="100" height="100"/>
         <image name="no_image" width="154" height="148"/>
         <image name="star_on" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">

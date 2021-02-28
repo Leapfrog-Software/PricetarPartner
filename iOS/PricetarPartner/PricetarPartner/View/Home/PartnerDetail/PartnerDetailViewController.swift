@@ -40,7 +40,10 @@ class PartnerDetailViewController: UIViewController {
         super.viewDidLoad()
 
         self.headerNameLabel.text = self.user.nickname
+        
         ImageStorage.shared.fetch(url: UserData.imageUrl(userId: self.user.id), imageView: self.userImageView)
+        self.userImageView.layer.cornerRadius = (UIScreen.main.bounds.size.width - 120) / 2
+        
         self.nameLabel.text = self.user.nickname
         self.statusLabel.text = self.user.partnerStatus
         self.lastLoginDatetimeLabel.text = self.user.lastLoginString()
@@ -74,6 +77,10 @@ class PartnerDetailViewController: UIViewController {
     
     @IBAction func onTapBack(_ sender: Any) {
         self.pop(animationType: .horizontal)
+    }
+    
+    @IBAction func onTapMessage(_ sender: Any) {
+        
     }
 }
 
