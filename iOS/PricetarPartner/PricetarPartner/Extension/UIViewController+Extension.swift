@@ -75,4 +75,12 @@ extension UIViewController {
         self.view.removeFromSuperview()
         self.removeFromParent()
     }
+    
+    func getTabbarViewController() -> TabbarViewController? {
+        
+        if let splash = UIApplication.shared.keyWindow?.rootViewController as? SplashViewController {
+            return splash.children.compactMap { $0 as? TabbarViewController }.first
+        }
+        return nil
+    }
 }

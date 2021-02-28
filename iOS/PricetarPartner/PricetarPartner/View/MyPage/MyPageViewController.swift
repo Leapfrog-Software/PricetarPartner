@@ -9,21 +9,30 @@ import UIKit
 
 class MyPageViewController: UIViewController {
 
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var profileTypeLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    
+    func reload() {
+        
+        guard let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId) else {
+            return
+        }
+        ImageStorage.shared.fetch(url: UserData.imageUrl(userId: SaveData.shared.userId), imageView: self.userImageView)
+        self.profileTypeLabel.text = myUserData.profileType.toText()
+        self.nameLabel.text = myUserData.nickname
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.reload()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func onTapProfile(_ sender: Any) {
+        
+        let profile = self.instantiate(storyboard: "MyPage", identifier: "ProfileViewController") as! ProfileViewController
+        profile.set(transitionSource: .myPage)
+        self.getTabbarViewController()?.stack(viewController: profile, animationType: .horizontal)
     }
-    */
-
 }

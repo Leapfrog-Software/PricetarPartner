@@ -31,6 +31,33 @@ class ProfilePartnerViewController: KeyboardRespondableViewController {
     private let imagePicker = ImagePickerManager()
     private var selectedImage: UIImage?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        guard let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId) else {
+            return
+        }
+        self.nicknameTextField.text = myUserData.nickname
+        self.areaLabel.text = myUserData.area
+        self.careerLabel.text = myUserData.partnerCareer
+        self.statusLabel.text = myUserData.partnerStatus
+        self.oldPriceTextField.text = myUserData.partnerOldPrice
+        self.newPriceTextField.text = myUserData.partnerNewPrice
+        self.dangerousPriceTextField.text = myUserData.partnerDangerousPrice
+        self.dangerousMessageTextView.text = myUserData.partnerDangerousMessage
+        self.bigPriceTextField.text = myUserData.partnerBigPrice
+        self.bigMessageTextView.text = myUserData.partnerBigMessage
+        self.inspectionPriceTextField.text = myUserData.partnerInspectionPrice
+        self.inspectionMessageTextView.text = myUserData.partnerInspectionMessage
+        self.messageTextView.text = myUserData.partnerMessage
+        
+        ImageStorage.shared.fetch(url: UserData.imageUrl(userId: myUserData.id), imageView: self.userImageView, errorImage: UIImage(named: "profile_image_guide"), completion: nil)
+        
+        self.selectedArea = (myUserData.area.count > 0) ? myUserData.area : nil
+        self.selectedCareer = (myUserData.partnerCareer.count > 0) ? myUserData.partnerCareer : nil
+        self.selectedStatus = (myUserData.partnerStatus.count > 0) ? myUserData.partnerStatus : nil
+    }
+    
     @IBAction func didEndOnExitTextField(_ sender: Any) {
         self.view.endEditing(true)
     }
@@ -51,7 +78,7 @@ class ProfilePartnerViewController: KeyboardRespondableViewController {
         
         self.view.endEditing(true)
         
-        let dataArray = ["1年未満", "1 〜 3年", "3 〜 5年", "5 〜 10年", "10年以上"]
+        let dataArray = ["1年未満", "1年以上", "3年以上", "5年以上", "10年以上"]
 
         var defaultIndex: Int? = nil
         if let selectedCareer = self.selectedCareer {
@@ -71,7 +98,7 @@ class ProfilePartnerViewController: KeyboardRespondableViewController {
         
         self.view.endEditing(true)
         
-        let dataArray = ["受付中", "休止中"]
+        let dataArray = ["お仕事受付中", "休止中"]
 
         var defaultIndex: Int? = nil
         if let selectedStatus = self.selectedStatus {
