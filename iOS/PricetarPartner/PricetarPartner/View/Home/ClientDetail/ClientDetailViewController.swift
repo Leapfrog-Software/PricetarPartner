@@ -55,6 +55,9 @@ class ClientDetailViewController: UIViewController {
     
     @IBAction func onTapMessage(_ sender: Any) {
         
+        let chat = self.instantiate(storyboard: "Message", identifier: "ChatViewController") as! ChatViewController
+        chat.set(targetId: self.user.id)
+        self.stack(viewController: chat, animationType: .horizontal)
     }
 }
 

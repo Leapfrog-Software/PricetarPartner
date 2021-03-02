@@ -31,13 +31,22 @@ class SplashViewController: UIViewController {
     
     func fetch() {
         
-        FetchUserRequester.shared.fetch(completion: { _ in
-            if let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId), myUserData.profileType != .none {
-                let tabbar = self.instantiate(storyboard: "Main", identifier: "TabbarViewController") as! TabbarViewController
-                self.stack(viewController: tabbar, animationType: .none)
-            } else {
-                self.showLoginView()
-            }
+        FetchUserRequester.shared.fetch(completion: { resultUser in
+            FetchChatGroupRequester.shared.fetch(completion: { resultChatGroup in
+                if resultUser && resultChatGroup {
+                    if let myUserData = FetchUserRequester.shared.query(userId: SaveData.shared.userId), myUserData.profileType != .none {
+                        let tabbar = self.instantiate(storyboard: "Main", identifier: "TabbarViewController") as! TabbarViewController
+                        self.stack(viewController: tabbar, animationType: .none)
+                    } else {
+                        self.showLoginView()
+                    }
+                } else {
+                    let action = DialogAction(title: "OK", action: { [weak self] in
+                        self?.fetch()
+                    })
+                    Dialog.show(style: .error, title: "エラー", message: "通信に失敗しました", actions: [action])
+                }
+            })
         })
     }
     

@@ -15,6 +15,18 @@
 		170757BA25E8C0F7003D1ECB /* ClientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757B925E8C0F7003D1ECB /* ClientDetailViewController.swift */; };
 		170757BE25E8C102003D1ECB /* PartnerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757BD25E8C102003D1ECB /* PartnerDetailViewController.swift */; };
 		170757C525E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170757C425E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift */; };
+		1739D5C025EDC44E0055572B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5BF25EDC44E0055572B /* ChatViewController.swift */; };
+		1739D5C425EDCD230055572B /* FetchChatGroupRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5C325EDCD230055572B /* FetchChatGroupRequester.swift */; };
+		1739D5C725EDCD3E0055572B /* ChatGroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5C625EDCD3E0055572B /* ChatGroupData.swift */; };
+		1739D5CA25EDD3460055572B /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5C925EDD3460055572B /* MessageTableViewCell.swift */; };
+		1739D5CE25EDF2130055572B /* ChatMessageLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5CD25EDF2130055572B /* ChatMessageLeftTableViewCell.swift */; };
+		1739D5D125EDF21D0055572B /* ChatMessageRightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5D025EDF21D0055572B /* ChatMessageRightTableViewCell.swift */; };
+		1739D5D425EDF2290055572B /* ChatImageLeftTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5D325EDF2290055572B /* ChatImageLeftTableViewCell.swift */; };
+		1739D5D725EDF2320055572B /* ChatImageRightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5D625EDF2320055572B /* ChatImageRightTableViewCell.swift */; };
+		1739D5DA25EDF97B0055572B /* ChatData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5D925EDF97B0055572B /* ChatData.swift */; };
+		1739D5DD25EDFA330055572B /* FetchChatRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5DC25EDFA330055572B /* FetchChatRequester.swift */; };
+		1739D5E025EE025F0055572B /* PostChatMessageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5DF25EE025F0055572B /* PostChatMessageRequester.swift */; };
+		1739D5E325EE027B0055572B /* PostChatImageRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1739D5E225EE027B0055572B /* PostChatImageRequester.swift */; };
 		1750A7F325E2421100E5B346 /* Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A7F225E2421100E5B346 /* Loading.swift */; };
 		1750A7F725E2421900E5B346 /* Loading.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1750A7F625E2421900E5B346 /* Loading.xib */; };
 		1750A7FA25E2425D00E5B346 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1750A7F925E2425D00E5B346 /* Dialog.swift */; };
@@ -80,6 +92,18 @@
 		170757B925E8C0F7003D1ECB /* ClientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientDetailViewController.swift; sourceTree = "<group>"; };
 		170757BD25E8C102003D1ECB /* PartnerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailViewController.swift; sourceTree = "<group>"; };
 		170757C425E8C5F9003D1ECB /* PartnerDetailOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerDetailOptionTableViewCell.swift; sourceTree = "<group>"; };
+		1739D5BF25EDC44E0055572B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		1739D5C325EDCD230055572B /* FetchChatGroupRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChatGroupRequester.swift; sourceTree = "<group>"; };
+		1739D5C625EDCD3E0055572B /* ChatGroupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatGroupData.swift; sourceTree = "<group>"; };
+		1739D5C925EDD3460055572B /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		1739D5CD25EDF2130055572B /* ChatMessageLeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageLeftTableViewCell.swift; sourceTree = "<group>"; };
+		1739D5D025EDF21D0055572B /* ChatMessageRightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageRightTableViewCell.swift; sourceTree = "<group>"; };
+		1739D5D325EDF2290055572B /* ChatImageLeftTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageLeftTableViewCell.swift; sourceTree = "<group>"; };
+		1739D5D625EDF2320055572B /* ChatImageRightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImageRightTableViewCell.swift; sourceTree = "<group>"; };
+		1739D5D925EDF97B0055572B /* ChatData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatData.swift; sourceTree = "<group>"; };
+		1739D5DC25EDFA330055572B /* FetchChatRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchChatRequester.swift; sourceTree = "<group>"; };
+		1739D5DF25EE025F0055572B /* PostChatMessageRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostChatMessageRequester.swift; sourceTree = "<group>"; };
+		1739D5E225EE027B0055572B /* PostChatImageRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostChatImageRequester.swift; sourceTree = "<group>"; };
 		1750A7F225E2421100E5B346 /* Loading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loading.swift; sourceTree = "<group>"; };
 		1750A7F625E2421900E5B346 /* Loading.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loading.xib; sourceTree = "<group>"; };
 		1750A7F925E2425D00E5B346 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
@@ -166,6 +190,18 @@
 			path = PartnerDetail;
 			sourceTree = "<group>";
 		};
+		1739D5BE25EDC43D0055572B /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				1739D5BF25EDC44E0055572B /* ChatViewController.swift */,
+				1739D5CD25EDF2130055572B /* ChatMessageLeftTableViewCell.swift */,
+				1739D5D025EDF21D0055572B /* ChatMessageRightTableViewCell.swift */,
+				1739D5D325EDF2290055572B /* ChatImageLeftTableViewCell.swift */,
+				1739D5D625EDF2320055572B /* ChatImageRightTableViewCell.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		1750A7F025E241FD00E5B346 /* Dialog */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,6 +286,8 @@
 			isa = PBXGroup;
 			children = (
 				1750A83225E2496700E5B346 /* MessageViewController.swift */,
+				1739D5C925EDD3460055572B /* MessageTableViewCell.swift */,
+				1739D5BE25EDC43D0055572B /* Chat */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -391,6 +429,8 @@
 			isa = PBXGroup;
 			children = (
 				17CC7C2725E2373300231F18 /* UserData.swift */,
+				1739D5C625EDCD3E0055572B /* ChatGroupData.swift */,
+				1739D5D925EDF97B0055572B /* ChatData.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -403,6 +443,10 @@
 				17CC7C2D25E239B900231F18 /* FetchUserRequester.swift */,
 				1754842225E3466D00FCEB04 /* UpdateClientProfileRequester.swift */,
 				17C16D4725E4BEA900639E1C /* UpdatePartnerProfileRequester.swift */,
+				1739D5C325EDCD230055572B /* FetchChatGroupRequester.swift */,
+				1739D5DC25EDFA330055572B /* FetchChatRequester.swift */,
+				1739D5DF25EE025F0055572B /* PostChatMessageRequester.swift */,
+				1739D5E225EE027B0055572B /* PostChatImageRequester.swift */,
 			);
 			path = Requester;
 			sourceTree = "<group>";
@@ -500,8 +544,10 @@
 			files = (
 				1754841D25E343E700FCEB04 /* ImagePickerManager.swift in Sources */,
 				17CC7C2525E2371100231F18 /* LoginRequester.swift in Sources */,
+				1739D5D425EDF2290055572B /* ChatImageLeftTableViewCell.swift in Sources */,
 				17C16D4825E4BEA900639E1C /* UpdatePartnerProfileRequester.swift in Sources */,
 				1750A7F325E2421100E5B346 /* Loading.swift in Sources */,
+				1739D5D125EDF21D0055572B /* ChatMessageRightTableViewCell.swift in Sources */,
 				17CC7C1B25E2369000231F18 /* Constants.swift in Sources */,
 				1750A7FA25E2425D00E5B346 /* Dialog.swift in Sources */,
 				17CC7C3125E239DA00231F18 /* SaveData.swift in Sources */,
@@ -509,13 +555,18 @@
 				17CC7C3C25E23CAA00231F18 /* UIViewController+Extension.swift in Sources */,
 				1750A82925E2494A00E5B346 /* HomeViewController.swift in Sources */,
 				1750A82125E2484500E5B346 /* ProfileViewController.swift in Sources */,
+				1739D5DA25EDF97B0055572B /* ChatData.swift in Sources */,
+				1739D5CA25EDD3460055572B /* MessageTableViewCell.swift in Sources */,
 				17CC7C2225E236E500231F18 /* String+Extension.swift in Sources */,
 				170757A725E8B8A6003D1ECB /* HomeNewTitleTableViewCell.swift in Sources */,
+				1739D5DD25EDFA330055572B /* FetchChatRequester.swift in Sources */,
 				17CC7C2825E2373300231F18 /* UserData.swift in Sources */,
 				1750A83625E24C9D00E5B346 /* ProfileClientViewController.swift in Sources */,
 				1754842325E3466D00FCEB04 /* UpdateClientProfileRequester.swift in Sources */,
 				1750A80825E2437A00E5B346 /* TabbarViewController.swift in Sources */,
+				1739D5C725EDCD3E0055572B /* ChatGroupData.swift in Sources */,
 				1754840B25E339CD00FCEB04 /* PickerTableViewCell.swift in Sources */,
+				1739D5D725EDF2320055572B /* ChatImageRightTableViewCell.swift in Sources */,
 				17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */,
 				1790D63E25EB8230003988E0 /* SearchTableViewCell.swift in Sources */,
 				17D2054B25E39467003ECF38 /* KeyboardRespondableViewController.swift in Sources */,
@@ -525,7 +576,10 @@
 				170757AD25E8B8BD003D1ECB /* HomePopularTitleTableViewCell.swift in Sources */,
 				17CC7C1325E2366000231F18 /* HttpRequester.swift in Sources */,
 				1750A83025E2495D00E5B346 /* SearchViewController.swift in Sources */,
+				1739D5E325EE027B0055572B /* PostChatImageRequester.swift in Sources */,
+				1739D5E025EE025F0055572B /* PostChatMessageRequester.swift in Sources */,
 				1754840725E339C100FCEB04 /* PickerViewController.swift in Sources */,
+				1739D5C025EDC44E0055572B /* ChatViewController.swift in Sources */,
 				170757B325E8BD39003D1ECB /* ImageStorage.swift in Sources */,
 				17CC7C0925E21D1900231F18 /* SplashViewController.swift in Sources */,
 				170757B025E8B8C6003D1ECB /* HomePopularUserTableViewCell.swift in Sources */,
@@ -536,6 +590,8 @@
 				17CC7C3425E23A6700231F18 /* RegisterUserViewController.swift in Sources */,
 				1754840125E32EF900FCEB04 /* ProfileAreaSelectTableViewCell.swift in Sources */,
 				1750A81C25E2483500E5B346 /* MyPageViewController.swift in Sources */,
+				1739D5C425EDCD230055572B /* FetchChatGroupRequester.swift in Sources */,
+				1739D5CE25EDF2130055572B /* ChatMessageLeftTableViewCell.swift in Sources */,
 				1750A7FD25E2426600E5B346 /* DialogButton.swift in Sources */,
 				17CC7C2B25E239A500231F18 /* DateFormatter+Extension.swift in Sources */,
 				170757AA25E8B8B1003D1ECB /* HomeNewUserTableViewCell.swift in Sources */,
