@@ -20,6 +20,7 @@ import jp.co.lfg.pricetarpartner.Fragment.Home.HomeFragment;
 import jp.co.lfg.pricetarpartner.Fragment.Message.MessageFragment;
 import jp.co.lfg.pricetarpartner.Fragment.MyPage.MyPageFragment;
 import jp.co.lfg.pricetarpartner.Fragment.Search.SearchFragment;
+import jp.co.lfg.pricetarpartner.Http.AutoRequester;
 import jp.co.lfg.pricetarpartner.R;
 
 public class TabbarFragment extends BaseFragment {
@@ -29,6 +30,8 @@ public class TabbarFragment extends BaseFragment {
     private SearchFragment mSearchFragment;
     private MessageFragment mMessageFragment;
     private MyPageFragment mMyPageFragment;
+
+    private AutoRequester mAutoRequester = new AutoRequester();
 
     public void reload() {
 
@@ -48,6 +51,25 @@ public class TabbarFragment extends BaseFragment {
         initAction(view);
 
         return view;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        mAutoRequester.start(new AutoRequester.Callback() {
+            @Override
+            public void didReceiveData() {
+                reload();
+            }
+        });
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        mAutoRequester.stop();
     }
 
     private void initFragmentController() {
