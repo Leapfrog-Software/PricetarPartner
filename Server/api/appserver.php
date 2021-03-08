@@ -1,6 +1,8 @@
 <?php
 
 require "./user.php";
+require "./chatgroup.php";
+require "./chat.php";
 
 date_default_timezone_set("Asia/Tokyo");
 
@@ -18,6 +20,14 @@ if (strcmp($command, "registerUser") == 0) {
 	updateClientProfile();
 } else if (strcmp($command, "updatePartnerProfile") == 0) {
 	updatePartnerProfile();
+} else if (strcmp($command, "getChatGroup") == 0) {
+	getChatGroup();
+} else if (strcmp($command, "getChat") == 0) {
+	getChat();
+} else if (strcmp($command, "postChatMessage") == 0) {
+	postChatMessage();
+} else if (strcmp($command, "postChatImage") == 0) {
+	postChatImage();
 }
 else {
 	echo("unknown");
@@ -105,6 +115,79 @@ function updatePartnerProfile() {
 	} else {
 		echo(json_encode(Array("result" => "1")));
 	}
+}
+
+function getChatGroup() {
+
+	$userId = getPostParam("userId");
+
+	$chatGroups = [];
+	foreach (ChatGroup::readAll() as $chatGroup) {
+		if ((strcmp($chatGroup->userId1, $userId) == 0) || (strcmp($chatGroup->userId2, $userId2) == 0)) {
+			$chatGroups[] = $chatGroup->toApiResponse();
+		}
+	}
+	echo(json_encode(Array("result" => "0", "chatGroups" => $chatGroups)));
+}
+
+function getChat() {
+
+	$userId1 = getPostParam("userId1");
+	$userId2 = getPostParam("userId2");
+
+	$chatGroup = ChatGroup::read($userId1, $userId2);
+
+	$chats = [];
+	if (!is_null($chatGroup)) {
+		foreach (Chat::readAll($chatGroup->id) as $chat) {
+			$chats[] = $chat->toApiResponse();
+		}
+	}
+	echo(json_encode(Array("result" => "0", "chats" => $chats)));
+}
+
+function postChatMessage() {
+
+	$senderId = getPostParam("senderId");
+	$targetId = getPostParam("targetId");
+	$message = getPostParam("message");
+
+//	debugSave("sender: " . $senderId . ", target: " . $targetId);
+
+	$chatGroupId = ChatGroup::createIfNotExist($senderId, $targetId);
+	if (is_null($chatGroupId)) {
+		echo(json_encode(Array("result" => "2")));
+		return;
+	}
+
+	if (ChatGroup::incrementUnreadCount($senderId, $targetId)) {
+		if (Chat::postMessage($chatGroupId, $senderId, $targetId, $message)) {
+			echo(json_encode(Array("result" => "0")));
+			return;
+		}
+	}
+	echo(json_encode(Array("result" => "1")));
+}
+
+function postChatImage() {
+
+	$senderId = getPostParam("senderId");
+	$targetId = getPostParam("targetId");
+	$image = getPostParam("image");
+
+	$chatGroupId = ChatGroup::createIfNotExist($senderId, $targetId);
+	if (is_null($chatGroupId)) {
+		echo(json_encode(Array("result" => "2")));
+		return;
+	}
+
+	if (ChatGroup::incrementUnreadCount($senderId, $targetId)) {
+		if (Chat::postImage($chatGroupId, $senderId, $targetId, $image)) {
+			echo(json_encode(Array("result" => "0")));
+			return;
+		}
+	}	
+	echo(json_encode(Array("result" => "1")));
 }
 
 
