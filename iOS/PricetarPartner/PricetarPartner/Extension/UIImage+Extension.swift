@@ -22,6 +22,19 @@ extension UIImage {
         }
     }
     
+    func toChatImage() -> UIImage? {
+
+        if self.size.width > self.size.height {
+            let width = 500 / UIScreen.main.scale
+            let height = width * self.size.height / self.size.width
+            return self.resize(size: CGSize(width: width, height: height))
+        } else {
+            let height = 500 / UIScreen.main.scale
+            let width = height * self.size.width / self.size.height
+            return self.resize(size: CGSize(width: width, height: height))
+        }
+    }
+    
     func resize(size: CGSize) -> UIImage? {
         
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)

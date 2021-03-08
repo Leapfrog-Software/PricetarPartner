@@ -21,6 +21,7 @@ class ChatViewController: UIViewController {
     private var dummyLeftMessageCell: ChatMessageLeftTableViewCell?
     private var dummyRightMessageCell: ChatMessageRightTableViewCell?
     private var dummyMessageTextView: UITextView?
+    private let imagePicker = ImagePickerManager()
     
     func set(targetId: String) {
         self.targetId = targetId
@@ -115,6 +116,18 @@ class ChatViewController: UIViewController {
     @IBAction func onTapCamera(_ sender: Any) {
         
         self.view.endEditing(true)
+        
+        self.imagePicker.showPicker(on: self, type: .photoLibrary, completion: { [weak self] image in
+            if let chatImage = image.toChatImage(), let targetId = self?.targetId {
+                PostChatImageRequester.post(targetId: targetId, image: chatImage, completion: { result in
+                    if result {
+                        self?.timerProc()
+                    } else {
+                        Dialog.show(style: .error, title: "エラー", message: "通信に失敗しました", actions: [DialogAction(title: "OK", action: nil)])
+                    }
+                })
+            }
+        })
     }
 }
 
@@ -194,7 +207,7 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
                 return self.dummyLeftMessageCell?.height(chatData: self.chats[indexPath.row]) ?? 0
             }
         } else {
-            return 120
+            return 210
         }
     }
 }

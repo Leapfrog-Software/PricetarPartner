@@ -9,15 +9,31 @@ import UIKit
 
 class MessageTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    @IBOutlet private weak var userImageView: UIImageView!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var unreadCountLabel: UILabel!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        ImageStorage.shared.cancelRequest(imageView: self.userImageView)
+        self.userImageView.image = nil
     }
+    
+    func configure(chatGroupData: ChatGroupData) {
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        if chatGroupData.userId1 == SaveData.shared.userId {
+            ImageStorage.shared.fetch(url: UserData.imageUrl(userId: chatGroupData.userId2), imageView: self.userImageView)
+            self.nameLabel.text = FetchUserRequester.shared.query(userId: chatGroupData.userId2)?.nickname ?? ""
 
-        // Configure the view for the selected state
+            self.unreadCountLabel.isHidden = (chatGroupData.unreadCount2 == 0)
+            self.unreadCountLabel.text = (chatGroupData.unreadCount2 > 99) ? "99+" : "\(chatGroupData.unreadCount2)"
+        } else {
+            ImageStorage.shared.fetch(url: UserData.imageUrl(userId: chatGroupData.userId1), imageView: self.userImageView)
+            self.nameLabel.text = FetchUserRequester.shared.query(userId: chatGroupData.userId1)?.nickname ?? ""
+            
+            self.unreadCountLabel.isHidden = (chatGroupData.unreadCount1 == 0)
+            self.unreadCountLabel.text = (chatGroupData.unreadCount1 > 99) ? "99+" : "\(chatGroupData.unreadCount1)"
+        }
     }
-
 }
