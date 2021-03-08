@@ -17,6 +17,8 @@ class TabbarViewController: UIViewController {
     private var messageViewController: MessageViewController!
     private var myPageViewController: MyPageViewController!
     
+    private let autoRequester = AutoRequester()
+    
     func reload() {
         
         self.homeViewController.reload()
@@ -50,6 +52,8 @@ class TabbarViewController: UIViewController {
         self.myPageViewController = myPageViewController
      
         self.changeTab(index: 0)
+        
+        self.startAutoRequester()
     }
 
     private func addViewController(viewController: UIViewController) {
@@ -72,6 +76,21 @@ class TabbarViewController: UIViewController {
         self.searchViewController.view.isHidden = (index != 2)
         self.messageViewController.view.isHidden = (index != 3)
         self.myPageViewController.view.isHidden = (index != 4)
+    }
+    
+    func startAutoRequester() {
+        
+        self.autoRequester.start(didFetch: { [weak self] in
+            self?.reload()
+        })
+    }
+    
+    func restartAutoRequester() {
+        self.autoRequester.restart()
+    }
+    
+    func stopAutoRequester() {
+        self.autoRequester.stop()
     }
     
     @IBAction func onTapTab0(_ sender: Any) {

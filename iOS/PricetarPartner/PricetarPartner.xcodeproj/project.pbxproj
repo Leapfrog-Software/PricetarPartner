@@ -59,6 +59,7 @@
 		1754841D25E343E700FCEB04 /* ImagePickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841C25E343E700FCEB04 /* ImagePickerManager.swift */; };
 		1754842025E3443D00FCEB04 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754841F25E3443D00FCEB04 /* UIImage+Extension.swift */; };
 		1754842325E3466D00FCEB04 /* UpdateClientProfileRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1754842225E3466D00FCEB04 /* UpdateClientProfileRequester.swift */; };
+		1784683F25F5E731004BFEB6 /* AutoRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1784683E25F5E731004BFEB6 /* AutoRequester.swift */; };
 		1790D63E25EB8230003988E0 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1790D63D25EB8230003988E0 /* SearchTableViewCell.swift */; };
 		17C16D4825E4BEA900639E1C /* UpdatePartnerProfileRequester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C16D4725E4BEA900639E1C /* UpdatePartnerProfileRequester.swift */; };
 		17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17CC7BEB25E21C0300231F18 /* AppDelegate.swift */; };
@@ -136,6 +137,7 @@
 		1754841C25E343E700FCEB04 /* ImagePickerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerManager.swift; sourceTree = "<group>"; };
 		1754841F25E3443D00FCEB04 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1754842225E3466D00FCEB04 /* UpdateClientProfileRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateClientProfileRequester.swift; sourceTree = "<group>"; };
+		1784683E25F5E731004BFEB6 /* AutoRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoRequester.swift; sourceTree = "<group>"; };
 		1790D63D25EB8230003988E0 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		17C16D4725E4BEA900639E1C /* UpdatePartnerProfileRequester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePartnerProfileRequester.swift; sourceTree = "<group>"; };
 		17CC7BE825E21C0300231F18 /* PricetarPartner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PricetarPartner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -383,6 +385,7 @@
 				17CC7C1225E2366000231F18 /* HttpRequester.swift */,
 				17CC7C1725E2366B00231F18 /* ApiRequester.swift */,
 				170757B225E8BD39003D1ECB /* ImageStorage.swift */,
+				1784683E25F5E731004BFEB6 /* AutoRequester.swift */,
 				17CC7C1025E2364800231F18 /* DataModel */,
 				17CC7C1125E2364D00231F18 /* Requester */,
 			);
@@ -565,6 +568,7 @@
 				1754842325E3466D00FCEB04 /* UpdateClientProfileRequester.swift in Sources */,
 				1750A80825E2437A00E5B346 /* TabbarViewController.swift in Sources */,
 				1739D5C725EDCD3E0055572B /* ChatGroupData.swift in Sources */,
+				1784683F25F5E731004BFEB6 /* AutoRequester.swift in Sources */,
 				1754840B25E339CD00FCEB04 /* PickerTableViewCell.swift in Sources */,
 				1739D5D725EDF2320055572B /* ChatImageRightTableViewCell.swift in Sources */,
 				17CC7BEC25E21C0300231F18 /* AppDelegate.swift in Sources */,
