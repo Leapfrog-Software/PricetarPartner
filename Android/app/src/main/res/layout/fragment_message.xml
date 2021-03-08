@@ -21,4 +21,24 @@
             android:layout_gravity="center"/>
     </FrameLayout>
 
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scrollbars="none"
+        android:overScrollMode="never"
+        android:divider="@null"
+        android:listSelector="#0000"/>
+
+    <TextView
+        android:id="@+id/noDataTextView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="メッセージはありません"
+        android:textSize="22dp"
+        android:textColor="#aaa"
+        android:gravity="center"/>
+
 </LinearLayout>
