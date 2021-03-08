@@ -85,7 +85,7 @@ public class GalleryManager {
 
             Intent intent = new Intent();
             intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-            Uri photoURI = FileProvider.getUriForFile(mActivity, "jp.co.lfg.pricetar.fileprovider", file);
+            Uri photoURI = FileProvider.getUriForFile(mActivity, "jp.co.lfg.pricetarpartner.fileprovider", file);
             intent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
             mActivity.startActivityForResult(intent, RequestCodeCamera);
 

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import java.util.StringJoiner;
 
 import jp.co.lfg.pricetarpartner.Fragment.BaseFragment;
+import jp.co.lfg.pricetarpartner.Fragment.Message.Chat.ChatFragment;
 import jp.co.lfg.pricetarpartner.Http.DataModel.UserData;
 import jp.co.lfg.pricetarpartner.Http.ImageStorage;
 import jp.co.lfg.pricetarpartner.R;
@@ -41,6 +42,15 @@ public class ClientDetailFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 popFragment(AnimationType.horizontal);
+            }
+        });
+
+        view.findViewById(R.id.messageButton).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ChatFragment fragment = new ChatFragment();
+                fragment.set(mUserData.id);
+                stackFragment(fragment, AnimationType.horizontal);
             }
         });
     }

@@ -23,6 +23,22 @@ public class BitmapUtility {
         return Bitmap.createScaledBitmap(bitmap, width, height, true);
     }
 
+    public static Bitmap createChatBitmap(Bitmap bitmap) {
+
+        int width, height;
+        int bitmapWidth = bitmap.getWidth();
+        int bitmapHeight = bitmap.getHeight();
+
+        if (bitmapWidth > bitmapHeight) {
+            width = 500;
+            height = 500 * bitmapHeight / bitmapWidth;
+        } else {
+            width = 500 * bitmapWidth / bitmapHeight;
+            height = 500;
+        }
+        return Bitmap.createScaledBitmap(bitmap, width, height, true);
+    }
+
     public static String getBase64EncodedString(Bitmap bitmap) {
 
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
