@@ -117,7 +117,7 @@ class ChatViewController: UIViewController {
         
         self.view.endEditing(true)
         
-        self.imagePicker.showPicker(on: self, type: .photoLibrary, completion: { [weak self] image in
+        self.imagePicker.showPicker(on: self, type: .camera, completion: { [weak self] image in
             if let chatImage = image.toChatImage(), let targetId = self?.targetId {
                 PostChatImageRequester.post(targetId: targetId, image: chatImage, completion: { result in
                     if result {
